@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class TicketGenerator 
 {
 	private ArrayList<LotteryTicket> lotteryTicket = new ArrayList<LotteryTicket>();
-	LotteryTicket singleTicket = new LotteryTicket();
+	
 	static int timesChecked = 0;
 	
 	TicketGenerator(){}
@@ -15,13 +16,15 @@ public class TicketGenerator
 		
 		for(j = 0; j < setsToGenerate; j++)
 		{
+			LotteryTicket singleTicket = new LotteryTicket();
 			for(k = 0; k < 6; k++)
 			{
 				singleTicket.setLottoNumbers(k, this.randomNumber(49, 1));
 			}
-			singleTicket.sortNumbers();			
+			singleTicket.sortNumbers();	
+			singleTicket.removeDuplicates();
+			singleTicket.sortNumbers();	
 			lotteryTicket.add(singleTicket);
-			singleTicket.reset();
 		}
 	}
 	
@@ -39,9 +42,7 @@ public class TicketGenerator
 		
 		for(k = 0; k < lotteryTicket.size(); k++)
 		{
-			lotteryTicket.get(0).printTicket();
-			lotteryTicket.get(1).printTicket();
-			lotteryTicket.get(2).printTicket();
+			lotteryTicket.get(k).printTicket();
 		}
 	}
 }

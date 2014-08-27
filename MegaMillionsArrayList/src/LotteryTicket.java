@@ -20,16 +20,16 @@ public class LotteryTicket
 	void printTicket()
 	{
 		int k;
-		System.out.print("Ticket numbers: ");
+		System.out.print("\nTicket numbers: ");
 		for(k = 0; k < 6; k++)
 		{
 			if(k == 5)
 			{
-				System.out.println(lottoNumbers[k]);
+				System.out.format("%2d\n", lottoNumbers[k]);
 			}
 			else
 			{
-				System.out.print(lottoNumbers[k] + ", ");
+				System.out.format("%2d, ", lottoNumbers[k]);
 			}
 		}
 
@@ -40,14 +40,26 @@ public class LotteryTicket
 		Arrays.sort(lottoNumbers);		
 	}
 
-	void reset() 
+	void removeDuplicates()
 	{
 		int k;
+		boolean isDuplicate = true;
 		
-		for(k = 0; k < 6; k++)
+		while(isDuplicate)
 		{
-			this.setLottoNumbers(k,0);
+			for( k = 1; k < lottoNumbers.length; k++)
+			{
+				isDuplicate = true;
+				if(lottoNumbers[k-1] == lottoNumbers[k])
+				{
+					System.out.println("FOUND AT " + (k-1) + "original number was" + lottoNumbers[k-1]);
+					this.setLottoNumbers(k-1, (int)((Math.random()*49)+1));
+				}
+				else
+				{
+					isDuplicate = false;
+				}				
+			}			
 		}
-		
 	}
 }
