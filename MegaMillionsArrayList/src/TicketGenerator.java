@@ -1,61 +1,47 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 
 public class TicketGenerator 
 {
-	private ArrayList<Integer> lotteryTicket = new ArrayList<Integer>();
+	private ArrayList<LotteryTicket> lotteryTicket = new ArrayList<LotteryTicket>();
+	LotteryTicket singleTicket = new LotteryTicket();
+	static int timesChecked = 0;
 	
 	TicketGenerator(){}
 	
-	void addNumbers(int setsToGenerate, int numbersPerSet)
+	void addNumbers(int setsToGenerate)
 	{
 		int j,k;
 		
 		for(j = 0; j < setsToGenerate; j++)
 		{
-			for(k = 0; k < numbersPerSet; k++)
+			for(k = 0; k < 6; k++)
 			{
-				lotteryTicket.add(this.randomNumber(49, 1));
+				singleTicket.setLottoNumbers(k, this.randomNumber(49, 1));
 			}
-			Collections.sort(lotteryTicket);
-			this.printTicket();
-			lotteryTicket.clear();
+			singleTicket.sortNumbers();			
+			lotteryTicket.add(singleTicket);
+			singleTicket.reset();
 		}
 	}
 	
-	void printTicket()
-	{
-		int k;
-		
-		System.out.print("Ticket numbers: ");
-		for(k = 0; k < lotteryTicket.size(); k++)
-		{
-			if(k == lotteryTicket.size()-1)
-			{
-				System.out.println(lotteryTicket.get(k));
-			}
-			else
-			{
-				System.out.print(lotteryTicket.get(k)+", ");
-			}
-		}
-	}
 	
 	int randomNumber(int max, int min)
 	{		
 		return (int)((Math.random()*max)+min);		
 	}
+		
+		
 	
-	void checkDoubles(int numberToCheck)
-	{		
-		int k,tempNumberToCheck;
+	void printTickets()
+	{
+		int k;
 		
-		
-		
-		tempNumberToCheck++;
-		checkDoublea(tempNumberToCheck);
-		
+		for(k = 0; k < lotteryTicket.size(); k++)
+		{
+			lotteryTicket.get(0).printTicket();
+			lotteryTicket.get(1).printTicket();
+			lotteryTicket.get(2).printTicket();
+		}
 	}
-	
 }

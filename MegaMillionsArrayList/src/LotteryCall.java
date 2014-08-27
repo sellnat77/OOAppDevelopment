@@ -5,7 +5,8 @@ public class LotteryCall
 	{
 		TicketGenerator megaMillions = new TicketGenerator();
 		
-		megaMillions.addNumbers(3, 6);
+		megaMillions.addNumbers(3);
+		megaMillions.printTickets();
 		
 	}
 }
