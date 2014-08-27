@@ -1,3 +1,11 @@
+/*
+ * Name   : Russell Tan
+ * Date   : 26 August 2014 
+ * Purpose: LotteryTicket class to be added to the array list
+ * Inputs : NA
+ * Output : single lottery ticket with unique numbers
+ */
+
 import java.util.Arrays;
 
 
@@ -5,24 +13,30 @@ public class LotteryTicket
 {
 	private int lottoNumbers[] = new int[6];
 	
+	//Default Constructor
 	LotteryTicket(){}
 	
-	void setLottoNumbers(int loc, int value)
+	/*Mutators and accessors*/
+	public void setLottoNumbers(int loc, int value)
 	{
 		lottoNumbers[loc] = value;
 	}
 	
-	int getLottoNumbers(int loc)
+	public int getLottoNumbers(int loc)
 	{
 		return lottoNumbers[loc];
 	}
 	
-	void printTicket()
+	/*Prints the full lotto ticket in a formatted manner*/
+	public void printTicket()
 	{
 		int k;
+		
 		System.out.print("\nTicket numbers: ");
+		
 		for(k = 0; k < 6; k++)
 		{
+			//Removes comma from the end of the array
 			if(k == 5)
 			{
 				System.out.format("%2d\n", lottoNumbers[k]);
@@ -32,15 +46,17 @@ public class LotteryTicket
 				System.out.format("%2d, ", lottoNumbers[k]);
 			}
 		}
-
 	}
 
-	void sortNumbers() 
+	/*Sorting needs to occur here to implement the Arrays class*/
+	public void sortNumbers() 
 	{
 		Arrays.sort(lottoNumbers);		
 	}
 
-	void removeDuplicates()
+	/*replaces duplicates in the array when a duplicate is found and repeatedly 
+	 * goes through the array until all the numbers are unique            	 */
+	public void removeDuplicates()
 	{
 		int k;
 		boolean isDuplicate = true;
@@ -49,10 +65,10 @@ public class LotteryTicket
 		{
 			for( k = 1; k < lottoNumbers.length; k++)
 			{
+				//Reset the bool to loop the the array again
 				isDuplicate = true;
 				if(lottoNumbers[k-1] == lottoNumbers[k])
 				{
-					System.out.println("FOUND AT " + (k-1) + "original number was" + lottoNumbers[k-1]);
 					this.setLottoNumbers(k-1, (int)((Math.random()*49)+1));
 				}
 				else

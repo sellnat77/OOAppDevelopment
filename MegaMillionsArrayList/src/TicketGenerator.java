@@ -1,48 +1,59 @@
+/*
+ * Name   : Russell Tan
+ * Date   : 26 August 2014 
+ * Purpose: Generate random numbers and print the tickets
+ * Inputs : NA
+ * Output : list of the lottery tickets
+ */
 import java.util.ArrayList;
-import java.util.Collections;
-
 
 public class TicketGenerator 
 {
-	private ArrayList<LotteryTicket> lotteryTicket = new ArrayList<LotteryTicket>();
+	private ArrayList<LotteryTicket> tickets = new ArrayList<LotteryTicket>();
+	private LotteryTicket singleTicket;
 	
-	static int timesChecked = 0;
-	
+	//Default constructor
 	TicketGenerator(){}
 	
-	void addNumbers(int setsToGenerate)
+	/*Adds numbers to the lotteryTicket array from the lotteryTicket class
+	 * Sorts the numbers and replaces the duplicates with another number
+	 * then sorts again														*/
+	public void createLottoTickets(int setsToGenerate)
 	{
 		int j,k;
 		
 		for(j = 0; j < setsToGenerate; j++)
 		{
-			LotteryTicket singleTicket = new LotteryTicket();
+			//Instantiate a new LotteryTicket for the arraylist
+			singleTicket = new LotteryTicket();
+			
 			for(k = 0; k < 6; k++)
 			{
 				singleTicket.setLottoNumbers(k, this.randomNumber(49, 1));
 			}
+			
 			singleTicket.sortNumbers();	
 			singleTicket.removeDuplicates();
-			singleTicket.sortNumbers();	
-			lotteryTicket.add(singleTicket);
+			singleTicket.sortNumbers();
+			
+			tickets.add(singleTicket);
 		}
 	}
 	
-	
-	int randomNumber(int max, int min)
+	/*Random number generator*/
+	public int randomNumber(int max, int min)
 	{		
 		return (int)((Math.random()*max)+min);		
-	}
-		
-		
+	}		
 	
-	void printTickets()
+	/*Prints the all the lotto tickets after they have been added to the AL */
+	public void printTickets()
 	{
 		int k;
 		
-		for(k = 0; k < lotteryTicket.size(); k++)
+		for(k = 0; k < tickets.size(); k++)
 		{
-			lotteryTicket.get(k).printTicket();
+			tickets.get(k).printTicket();
 		}
 	}
 }
