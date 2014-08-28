@@ -12,7 +12,7 @@ public class LotteryCall
 	{
 		TicketGenerator megaMillions = new TicketGenerator();
 		
-		megaMillions.createLottoTickets(5);
+		megaMillions.createLottoTickets(3);
 		megaMillions.printTickets();		
 	}
 }
