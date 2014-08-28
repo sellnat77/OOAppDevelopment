@@ -3,7 +3,7 @@
  * Date   : 26 August 2014 
  * Purpose: LotteryTicket class to be added to the array list
  * Inputs : NA
- * Output : single lottery ticket with unique numbers
+ * Output : single lottery ticket with 6 unique numbers
  */
 
 import java.util.Arrays;
