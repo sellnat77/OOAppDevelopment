@@ -6,12 +6,13 @@
  * Output : single lottery ticket with 6 unique numbers
  */
 
+import java.util.ArrayList;
 import java.util.Arrays;
-
+import java.util.Collections;
 
 public class LotteryTicket 
 {
-	private int lottoNumbers[] = new int[6];
+	private ArrayList<Integer> lottoNumbers = new ArrayList<Integer>()];
 	
 	//Default Constructor
 	LotteryTicket(){}
@@ -48,10 +49,10 @@ public class LotteryTicket
 		}
 	}
 
-	/*Sorting needs to occur here to implement the Arrays class*/
+	/*Sorting needs to occur here to sort the private array*/
 	public void sortNumbers() 
 	{
-		Arrays.sort(lottoNumbers);		
+		Collections.sort(lottoNumbers);		
 	}
 
 	/*replaces duplicates in the array when a duplicate is found and repeatedly 
