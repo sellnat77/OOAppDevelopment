@@ -6,14 +6,52 @@
  * Output : list of the lottery tickets
  */
 import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class TicketGenerator 
 {
 	private ArrayList<LotteryTicket> tickets = new ArrayList<LotteryTicket>();
 	private LotteryTicket singleTicket;
+	private Scanner userInput = new Scanner(System.in);
 	
 	//Default constructor
 	TicketGenerator(){}
+	
+	public int promtpGameSize()
+	{
+		int size;
+		boolean invalidNumber = true;
+		size = 0;
+		
+		
+		
+		while(invalidNumber)
+		{
+			
+			try
+			{
+				System.out.print("How many lottery tickets would you like to buy?: ");
+				size = userInput.nextInt();
+				if(size < 1)
+				{
+					System.out.println("Invalid Number, try again.");
+					invalidNumber = true;
+				}
+				else if(size > 1)
+				{
+					invalidNumber = false;
+				}
+			}
+			catch(InputMismatchException error)
+			{
+				System.out.println("Thats not a number! Try again.");
+				invalidNumber = false;
+				this.promtpGameSize();
+			}
+		}
+		return size;		
+	}
 	
 	/*Adds numbers to the lotteryTicket array from the lotteryTicket class
 	 * Sorts the numbers and replaces the duplicates with another number
@@ -29,7 +67,7 @@ public class TicketGenerator
 			
 			for(k = 0; k < 6; k++)
 			{
-				singleTicket.setLottoNumbers(k, this.randomNumber(49, 1));
+				singleTicket.addLottoNumbers(this.randomNumber(49, 1));
 			}
 			
 			singleTicket.sortNumbers();	

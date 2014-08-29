@@ -12,7 +12,7 @@ import java.util.Collections;
 
 public class LotteryTicket 
 {
-	private ArrayList<Integer> lottoNumbers = new ArrayList<Integer>()];
+	private ArrayList<Integer> lottoNumbers = new ArrayList<Integer>();
 	
 	//Default Constructor
 	LotteryTicket(){}
@@ -20,12 +20,17 @@ public class LotteryTicket
 	/*Mutators and accessors*/
 	public void setLottoNumbers(int loc, int value)
 	{
-		lottoNumbers[loc] = value;
+		lottoNumbers.set(loc, value);
 	}
 	
 	public int getLottoNumbers(int loc)
 	{
-		return lottoNumbers[loc];
+		return lottoNumbers.get(loc);
+	}
+	
+	public void addLottoNumbers(int value)
+	{
+		lottoNumbers.add(value);
 	}
 	
 	/*Prints the full lotto ticket in a formatted manner*/
@@ -40,11 +45,11 @@ public class LotteryTicket
 			//Removes comma from the end of the array
 			if(k == 5)
 			{
-				System.out.format("%2d\n", lottoNumbers[k]);
+				System.out.format("%2d\n", lottoNumbers.get(k));
 			}
 			else
 			{
-				System.out.format("%2d, ", lottoNumbers[k]);
+				System.out.format("%2d, ", lottoNumbers.get(k));
 			}
 		}
 	}
@@ -64,11 +69,11 @@ public class LotteryTicket
 		
 		while(isDuplicate)
 		{
-			for( k = 1; k < lottoNumbers.length; k++)
+			for( k = 1; k < lottoNumbers.size(); k++)
 			{
 				//Reset the bool to loop the the array again
 				isDuplicate = true;
-				if(lottoNumbers[k-1] == lottoNumbers[k])
+				if(lottoNumbers.get(k-1) == lottoNumbers.get(k))
 				{
 					this.setLottoNumbers(k-1, (int)((Math.random()*49)+1));
 				}
