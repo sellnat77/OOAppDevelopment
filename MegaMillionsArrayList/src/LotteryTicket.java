@@ -38,7 +38,7 @@ public class LotteryTicket
 	{
 		int k;
 		
-		System.out.print("\nTicket numbers: ");
+		System.out.print("\n");
 		
 		for(k = 0; k < 6; k++)
 		{

@@ -20,37 +20,35 @@ public class TicketGenerator
 	
 	public int promtpGameSize()
 	{
-		int size;
-		boolean invalidNumber = true;
-		size = 0;
+		int size = 0;
+		boolean flag = true;
 		
+		System.out.println("How many tickets would you like to buy?");
 		
-		
-		while(invalidNumber)
+		while(flag)
 		{
-			
 			try
 			{
-				System.out.print("How many lottery tickets would you like to buy?: ");
 				size = userInput.nextInt();
-				if(size < 1)
+				
+				if(size < 0)
 				{
-					System.out.println("Invalid Number, try again.");
-					invalidNumber = true;
+					flag = true;
+					System.out.println("Negative number\nTry again...");
 				}
-				else if(size > 1)
+				else
 				{
-					invalidNumber = false;
+					flag = false;
+					System.out.println("You have purchased " + size + " tickets, your numbers are:");
 				}
 			}
-			catch(InputMismatchException error)
+			catch(InputMismatchException e)
 			{
-				System.out.println("Thats not a number! Try again.");
-				invalidNumber = false;
-				this.promtpGameSize();
+				flag = false;
+				System.out.println("You have entered an invalid number, try again later.");				
 			}
 		}
-		return size;		
+		return size;	
 	}
 	
 	/*Adds numbers to the lotteryTicket array from the lotteryTicket class
