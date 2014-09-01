@@ -12,7 +12,8 @@ public class LotteryCall
 	{
 		TicketGenerator megaMillions = new TicketGenerator();
 		
-		megaMillions.createLottoTickets(megaMillions.promtpGameSize());
+		megaMillions.promtpGameSize();
+		megaMillions.createLottoTickets(megaMillions.getGameSize());
 		megaMillions.printTickets();		
 	}
 }

@@ -5,62 +5,83 @@
  * Inputs : NA
  * Output : list of the lottery tickets
  */
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.*;
 
 public class TicketGenerator 
 {
-	private ArrayList<LotteryTicket> tickets = new ArrayList<LotteryTicket>();
+	private int gameSize;
 	private LotteryTicket singleTicket;
 	private Scanner userInput = new Scanner(System.in);
+	private ArrayList<LotteryTicket> tickets = new ArrayList<LotteryTicket>();
 	
-	//Default constructor
+	/**
+	 * Default constructor
+	 */
 	TicketGenerator(){}
 	
-	public int promtpGameSize()
+	/**
+	 * Full Constructor
+	 */
+	TicketGenerator(int size)
 	{
-		int size = 0;
-		boolean flag = true;
-		
-		System.out.println("How many tickets would you like to buy?");
-		
-		while(flag)
-		{
-			try
-			{
-				size = userInput.nextInt();
-				
-				if(size < 0)
-				{
-					flag = true;
-					System.out.println("Negative number\nTry again...");
-				}
-				else
-				{
-					flag = false;
-					System.out.println("You have purchased " + size + " tickets, your numbers are:");
-				}
-			}
-			catch(InputMismatchException e)
-			{
-				flag = false;
-				System.out.println("You have entered an invalid number, try again later.");				
-			}
-		}
-		return size;	
+		gameSize = size;
 	}
 	
-	/*Adds numbers to the lotteryTicket array from the lotteryTicket class
+	/**
+	 * Mutators
+	 */
+	public void setGameSize(int size)
+	{
+		gameSize = size;
+	}
+	
+	/**
+	 * Accessors
+	 */
+	public int getGameSize()
+	{
+		return gameSize;
+	}
+	
+	/**
+	 * Prompts user for the game size, prompts again if input is invalid
+	 */
+	public void promtpGameSize()
+	{
+		System.out.println("How many lotto tickets would you like to buy?");		
+		
+		try
+		{
+			this.setGameSize(userInput.nextInt());
+			
+			if(this.getGameSize() < 0)
+			{
+				System.out.println("You must buy 1 or more tickets, try again.");
+				this.promtpGameSize();
+			}
+		}
+		catch(InputMismatchException error)
+		{
+			//Scanner.next() used to move scanner from the char/string 
+			//in order to allow for input of an int on the next iteration
+			System.out.println("That is not a number, try again.");
+			userInput.next();
+			this.promtpGameSize();
+		}		
+	}
+	
+	/**
+	 * Adds numbers to the lotteryTicket array list from the lotteryTicket class
 	 * Sorts the numbers and replaces the duplicates with another number
-	 * then sorts again														*/
+	 * then sorts again													
+	 */
 	public void createLottoTickets(int setsToGenerate)
 	{
 		int j,k;
 		
 		for(j = 0; j < setsToGenerate; j++)
 		{
-			//Instantiate a new LotteryTicket for the arraylist
+			//Instantiate a new LotteryTicket for the array list
 			singleTicket = new LotteryTicket();
 			
 			for(k = 0; k < 6; k++)
@@ -68,21 +89,29 @@ public class TicketGenerator
 				singleTicket.addLottoNumbers(this.randomNumber(49, 1));
 			}
 			
+			//Array list is sorted first to help finding duplicates
 			singleTicket.sortNumbers();	
 			singleTicket.removeDuplicates();
+
+			//Sorted again after duplicates replaced for formatting purposes
 			singleTicket.sortNumbers();
 			
 			tickets.add(singleTicket);
 		}
 	}
 	
-	/*Random number generator*/
+	/**
+	 * Random number generator
+	 */
 	public int randomNumber(int max, int min)
 	{		
 		return (int)((Math.random()*max)+min);		
 	}		
 	
-	/*Prints the all the lotto tickets after they have been added to the AL */
+	/**
+	 * Prints the all the lottery tickets after 
+	 * they have been added to the array list 
+	 */
 	public void printTickets()
 	{
 		int k;
