@@ -55,11 +55,11 @@ public class LotteryTicket
 			//Removes the comma from the end of the array
 			if(k == 5)
 			{
-				System.out.format("%2d\n", lottoNumbers.get(k));
+				System.out.format("\t%2d\n", lottoNumbers.get(k));
 			}
 			else
 			{
-				System.out.format("%2d, ", lottoNumbers.get(k));
+				System.out.format("\t%2d, ", lottoNumbers.get(k));
 			}
 		}
 	}
