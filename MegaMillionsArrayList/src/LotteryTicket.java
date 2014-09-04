@@ -73,8 +73,11 @@ public class LotteryTicket
 	}
 
 	/**
-	 * replaces duplicates in the array when a one is found and repeatedly 
-	 * goes through the array list until all of the numbers are unique            	 
+	 * Grabs one number in array list and compares it to the rest
+	 * if one duplicate is found the number is assigned a new random number
+	 * and the boolean is set to false to escape 
+	 * the inner for loop. to do{} statement is performed until the inner for loop
+	 * goes through all the numbers without finding a match with index[j]       	 
 	 */
 	public void removeDuplicates()
 	{

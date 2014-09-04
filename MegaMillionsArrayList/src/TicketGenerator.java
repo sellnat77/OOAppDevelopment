@@ -54,7 +54,7 @@ public class TicketGenerator
 		{
 			this.setGameSize(userInput.nextInt());
 			
-			if(this.getGameSize() < 0)
+			if(this.getGameSize() <= 0)
 			{
 				System.out.println("You must buy 1 or more tickets, try again.");
 				this.promtpGameSize();
