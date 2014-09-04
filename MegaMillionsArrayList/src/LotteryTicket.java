@@ -78,24 +78,24 @@ public class LotteryTicket
 	 */
 	public void removeDuplicates()
 	{
-		int k;
-		boolean isDuplicate = true;
+		int j,k;		
+		boolean duplicate;
 		
-		while(isDuplicate)
+		for(j = 0; j < 6; j++)
 		{
-			for( k = 1; k < lottoNumbers.size(); k++)
+			do
 			{
-				//Reset the boolean to loop through the array again
-				isDuplicate = true;
-				if(lottoNumbers.get(k-1) == lottoNumbers.get(k))
+				duplicate = true;
+				for(k = 0; duplicate && k < j; k++)
 				{
-					this.setLottoNumbers(k-1, (int)((Math.random()*49)+1));
+					if(lottoNumbers.get(k) == lottoNumbers.get(j))
+					{
+						this.setLottoNumbers(j, (int)((Math.random()*49)+1));
+						duplicate = false;
+					}
 				}
-				else
-				{
-					isDuplicate = false;
-				}				
-			}			
-		}
+			}
+			while(!duplicate);
+		}		
 	}
 }
