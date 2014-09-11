@@ -2,6 +2,7 @@ public class GeometricObject implements Comparable
 {
 	private String color = "White";
 	private boolean filled;
+	private static int max;
 	private java.util.Date dateCreated;
 	
 	public GeometricObject()
@@ -28,6 +29,10 @@ public class GeometricObject implements Comparable
 	{
 		return this.filled;
 	}
+	public int getMax()
+	{
+		return max;
+	}
 	public java.util.Date getDateCreated()
 	{
 		return this.dateCreated;
@@ -43,14 +48,29 @@ public class GeometricObject implements Comparable
 		this.filled = fill;
 	}
 	
+	public void setMax(int theMax)
+	{
+		this.max = theMax;
+	}
+	
 	public String toString()
 	{
 		return "This was created on "+this.getDateCreated()+"\n\tColor: "+this.getColor()+"\n\tFilled: "+this.getFilled();
 	}
+	
 	@Override
-	public int compareTo(Object arg0) 
+	public int compareTo(Object shape) 
 	{
-		// TODO Auto-generated method stub
+		GeometricObject myShape =(GeometricObject) shape;
+		
+		if(this.getMax() > myShape.getMax())
+		{
+			return 1;
+		}		
+		else if(this.getMax() < myShape.getMax())
+		{
+			return -1;
+		}		
 		return 0;
 	}	
 	

@@ -42,11 +42,34 @@ public class Rectangle extends GeometricObject
 		return Math.round(this.getHeight()*this.getWidth()*100.0)/100.0;
 	}
 	
+	public int getMax()
+	{
+		return (int)this.getArea();
+	}
+	
 	public String toString()
 	{
 		return "This rectangle was created on "+super.getDateCreated()+"\n\tColor: "+super.getColor()+"\n\tFilled: "+super.getFilled()
 				+"\n\tWidth: "+this.getWidth()+"\n\tHeght: "+this.getHeight()+"\n\tPerimeter: "+this.getPerimeter()
 				+"\n\tArea: "+this.getArea();
+	}
+	
+	@Override
+	public int compareTo(Object shape) 
+	{
+		Rectangle myShape =(Rectangle) shape;
+		
+		if(this.getMax() > myShape.getMax())
+		{
+			System.out.println("The original shape is larger.");
+			return 1;
+		}		
+		else if(this.getMax() < myShape.getMax())
+		{
+			System.out.println("The second shape is larger.");
+			return -1;
+		}		
+		return 0;
 	}
 
 }
