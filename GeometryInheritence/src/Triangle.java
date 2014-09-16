@@ -138,12 +138,12 @@ public class Triangle extends GeometricObject
 		
 		if(this.getMax() > myShape.getMax())
 		{
-			System.out.println("The original shape is larger.");
+			System.out.println("The original triangle is larger.");
 			return 1;
 		}		
 		else if(this.getMax() < myShape.getMax())
 		{
-			System.out.println("The second shape is larger.");
+			System.out.println("The second triangle is larger.");
 			return -1;
 		}		
 		return 0;

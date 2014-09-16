@@ -109,12 +109,12 @@ public class Rectangle extends GeometricObject
 		
 		if(this.getMax() > myShape.getMax())
 		{
-			System.out.println("The original shape is larger.");
+			System.out.println("The original rectangle is larger.");
 			return 1;
 		}		
 		else if(this.getMax() < myShape.getMax())
 		{
-			System.out.println("The second shape is larger.");
+			System.out.println("The second rectangle is larger.");
 			return -1;
 		}		
 		return 0;

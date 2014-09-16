@@ -109,12 +109,12 @@ public class Circle extends GeometricObject
 		
 		if(this.max() > myShape.max())
 		{
-			System.out.println("The original shape is larger.");
+			System.out.println("The original circle is larger.");
 			return 1;
 		}		
 		else if(this.max() < myShape.max())
 		{
-			System.out.println("The second shape is larger.");
+			System.out.println("The second circle is larger.");
 			return -1;
 		}		
 		return 0;
