@@ -1,25 +1,47 @@
-
+/*
+ * Name   : Russell Tan
+ * Date   : September 15, 2014
+ * Purpose: Create a triangle object
+ * Inputs : na
+ * Output : Triangle object with stats
+ */
 public class Triangle extends GeometricObject
 {
 	private double side1;
 	private double side2;
 	private double side3;
-	
+	/**
+	 * Default constructor
+	 */
 	public Triangle()
 	{
 		side1 = 0;
 		side2 = 0;
 		side3 = 0;
 	}
+	
+	/**
+	 * Partial constructors
+	 * @param A Definition of side1
+	 * @param B Definition of side2
+	 */
 	public Triangle(double A)
 	{
 		side1 = A;
 	}
+	
 	public Triangle(double A, double B)
 	{
 		side1 = A;
 		side2 = B;
 	}
+	
+	/**
+	 * Full Constructor
+	 * @param A Definition of side1
+	 * @param B Definition of side2
+	 * @param C Definition of side3
+	 */
 	public Triangle(double A, double B, double C)
 	{
 		side1 = A;
@@ -27,6 +49,12 @@ public class Triangle extends GeometricObject
 		side3 = C;
 	}
 	
+	/**
+	 * Accessors
+	 * @return side1
+	 * @return side2
+	 * @return side3
+	 */
 	public double getSide1()
 	{
 		return this.side1;
@@ -40,6 +68,10 @@ public class Triangle extends GeometricObject
 		return this.side3;
 	}
 	
+	/**
+	 * Mutators
+	 * @param A Sets side1, side2, side3
+	 */
 	public void setSide1(double A)
 	{
 		this.side1 = A;
@@ -53,11 +85,19 @@ public class Triangle extends GeometricObject
 		this.side3 = A;
 	}
 	
+	/**
+	 * Perimeter calculation
+	 * @return perimeter of the triangle
+	 */
 	public double getPerimeter()
 	{
 		return Math.round((this.getSide1()+this.getSide2()+this.getSide3())*100.0)/100.0;
 	}
 	
+	/**
+	 * Area calculation
+	 * @return Area of triangle based on herons formula
+	 */
 	public double getArea()
 	{
 		double scratch,halfPerim;
@@ -69,11 +109,18 @@ public class Triangle extends GeometricObject
 		return Math.round(Math.sqrt(scratch)*100.0)/100.0;		
 	}
 	
+	/**
+	 * Used for comparisons
+	 * @return Area of triangle
+	 */
 	public int getMax()
 	{
 		return (int)this.getArea();
 	}
 	
+	/**
+	 * Displays the facts about this triangle object in one formatted string
+	 */
 	public String toString()
 	{
 		return "This triangle was created on "+super.getDateCreated()+"\n\tColor: "+super.getColor()+"\n\tFilled: "+super.getFilled()
@@ -81,6 +128,9 @@ public class Triangle extends GeometricObject
 				+"\n\tPerimeter: "+this.getPerimeter()+"\n\tArea: "+this.getArea();
 	}
 	
+	/**
+	 * Compares other triangles
+	 */
 	@Override
 	public int compareTo(Object shape) 
 	{
@@ -99,6 +149,9 @@ public class Triangle extends GeometricObject
 		return 0;
 	}
 	
+	/**
+	 * Determines if one triangle is equal to another based on area
+	 */
 	public boolean equals(Object shape)
 	{
 		Triangle myShape =(Triangle) shape;
@@ -114,6 +167,4 @@ public class Triangle extends GeometricObject
 			return false;
 		}
 	}
-	
-
 }
