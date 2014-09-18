@@ -51,5 +51,4 @@ public class memoWriter
 			this.writeToFile();
 		}
 	}
-
 }
