@@ -58,9 +58,9 @@ public class GeometryTester
 		}
 		
 		//Comparisons for each
-		System.out.print("Comapring the original circle with the second circle\n\t");
+		System.out.print("Comparing the original circle with the second circle\n\t");
 		Circle.compareTo(Circle2);
-		System.out.print("\nComapring the second circle with the original circle\n\t");
+		System.out.print("\nComparing the second circle with the original circle\n\t");
 		Circle2.compareTo(Circle);
 		
 		System.out.print("\nComparing original rectangle with second rectangle\n\t");
