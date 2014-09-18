@@ -4,6 +4,6 @@ public class writeMemo
     {
 		memoWriter pencil = new memoWriter();
 
-		pencil.writeToFile();
+		pencil.writeMultipleMemos();
     }
 }

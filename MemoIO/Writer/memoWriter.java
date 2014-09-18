@@ -10,10 +10,10 @@ public class memoWriter
 
 	void writeToFile()
 	{
-		String temp;
-		try
+		try(PrintWriter write = new PrintWriter(new BufferedWriter(new FileWriter("memo.txt",true))))
 		{
-			PrintWriter write = new PrintWriter("memo.txt","UTF-8");
+			String temp;
+
 			temp = JOptionPane.showInputDialog("Eneter the subject of the memo.");
 			write.println(temp);
 			stamp = new java.util.Date();
@@ -27,6 +27,18 @@ public class memoWriter
 			System.out.println("Error writng to file.");
 			oops.printStackTrace();
 		}
-
 	}
+
+	void writeMultipleMemos()
+	{
+		int k,numberOfMemos;
+
+		numberOfMemos = Integer.parseInt(JOptionPane.showInputDialog("How many memos do you want to write?"));
+
+		for(k = 0; k < numberOfMemos; k++)
+		{
+			this.writeToFile();
+		}
+	}
+
 }
