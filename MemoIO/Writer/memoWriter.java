@@ -33,7 +33,18 @@ public class memoWriter
 	{
 		int k,numberOfMemos;
 
-		numberOfMemos = Integer.parseInt(JOptionPane.showInputDialog("How many memos do you want to write?"));
+		while(true)
+		{
+			try
+			{
+				numberOfMemos = Integer.parseInt(JOptionPane.showInputDialog("How many memos do you want to write?"));
+				break;
+			}
+			catch(NumberFormatException error)
+			{
+				JOptionPane.showMessageDialog(null,"ENTER A NUMBER");
+			}
+		}
 
 		for(k = 0; k < numberOfMemos; k++)
 		{
