@@ -58,19 +58,19 @@ public class GeometryTester
 		}
 		
 		//Comparisons for each
-		System.out.print("Comparing the original circle with the second circle\n\t");
+		System.out.print("Comparing the first circle with the second circle\n\t");
 		Circle.compareTo(Circle2);
-		System.out.print("\nComparing the second circle with the original circle\n\t");
+		System.out.print("\nComparing the second circle with the first circle\n\t");
 		Circle2.compareTo(Circle);
 		
-		System.out.print("\nComparing original rectangle with second rectangle\n\t");
+		System.out.print("\nComparing first rectangle with second rectangle\n\t");
 		Rectangle.compareTo(Rectangle2);
-		System.out.print("\nComparing second rectangle with original rectangle\n\t");
+		System.out.print("\nComparing second rectangle with first rectangle\n\t");
 		Rectangle2.compareTo(Rectangle);
 		
-		System.out.print("\nComparing the original triangle with the second one\n\t");
+		System.out.print("\nComparing the first triangle with the second one\n\t");
 		Triangle.compareTo(Triangle2);
-		System.out.print("\nComparing the second triangle with the original one\n\t");
+		System.out.print("\nComparing the second triangle with the first one\n\t");
 		Triangle2.compareTo(Triangle);
 
 		
