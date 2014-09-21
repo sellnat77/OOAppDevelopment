@@ -51,7 +51,6 @@ public class memoReader
 					    }
 					    else
 					    {
-						    System.out.println("You are out of memos!");
 						    JOptionPane.showMessageDialog(null,"No more memos!");
 						    more = 2;
 						    break;
