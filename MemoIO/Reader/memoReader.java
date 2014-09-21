@@ -3,13 +3,13 @@ import java.util.*;
 import java.io.*;
 public class memoReader
 {
-	memoReader()
-	{
-	}
+	private Scanner userInput = new Scanner(System.in);
+	memoReader(){}
 
 	void readFromFile()
 	{
 		int k;
+		int more = 1;
 		try
 		{
 
@@ -19,9 +19,31 @@ public class memoReader
 			   File selectedFile = chooser.getSelectedFile();
 			   Scanner in = new Scanner(selectedFile);
 
-			   for(k = 0; k < 3; k++)
+			   while(more == 1)
 			   {
-				   System.out.println(in.nextLine());
+				   for(k = 0; k < 3; k++)
+			   	   {
+					   if(in.hasNextLine())
+					   {
+						   System.out.println(in.nextLine());
+					   }
+					   else
+					   {
+						   System.out.println("You are out of memos!");
+						   break;
+					   }
+				   }
+					   System.out.println("Would you like to see the next memo?");
+					   System.out.println("\t1)Yes please!");
+					   System.out.println("\t2)No thats okay.");
+					   try
+					   {
+					   		more = userInput.nextInt();
+					   }
+					   catch(InputMismatchException e)
+					   {
+					   }
+
 			   }
 			}
 		}
@@ -29,5 +51,16 @@ public class memoReader
 		{
 			error.printStackTrace();
 		}
+	}
+
+	void readMultipleMemos()
+	{
+		int choice = 1;
+		while( choice == 1 )
+		{
+			this.readFromFile();
+
+		}
+
 	}
 }
