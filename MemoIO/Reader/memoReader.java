@@ -1,3 +1,11 @@
+/*
+ * Name: Russell Tan
+ * Date:
+ * Purpose:
+ * Inputs:
+ * Outputs:
+ */
+
 import javax.swing.*;
 import java.util.*;
 import java.io.*;
@@ -45,17 +53,20 @@ public class memoReader
 					   {
 						   System.out.println("You are out of memos!");
 						   buffer = "No more memos!";
+						   more = 2;
 						   break;
 					   }
 				   }
-				       JOptionPane.showMessageDialog(null,buffer);
-				       buffer = "";
+				   if(more == 1)
+				   {
+					   JOptionPane.showMessageDialog(null,buffer);
+					   buffer = "";
 					   System.out.println("\n\n\nWould you like to see the next memo?");
 					   System.out.println("\t1)Yes please!");
 					   System.out.println("\t2)No thats okay.");
 					   try
 					   {
-					   		more = userInput.nextInt();
+							more = userInput.nextInt();
 					   }
 					   catch(InputMismatchException e)
 					   {
@@ -63,7 +74,11 @@ public class memoReader
 						   userInput.next();
 						   more = userInput.nextInt();
 					   }
-
+				   }
+				   else
+				   {
+					   break;
+				   }
 			   }
 			}
 		}
