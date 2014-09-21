@@ -9,6 +9,7 @@ public class memoReader
 	void readFromFile()
 	{
 		int k;
+		String buffer = "";
 		int more = 1;
 		try
 		{
@@ -25,15 +26,31 @@ public class memoReader
 			   	   {
 					   if(in.hasNextLine())
 					   {
-						   System.out.println(in.nextLine());
+						   switch(k)
+						   {
+						   case 0:
+						         buffer += "\nSUBJECT:    " + in.nextLine();
+						         break;
+						   case 1:
+						   		 buffer += "\nDate Written:    " + in.nextLine();
+						   		 break;
+						   case 2:
+						   		 buffer += "\nMEMO:    " + in.nextLine();
+						   		 break;
+						   default:
+						   		 break;
+						    }
 					   }
 					   else
 					   {
 						   System.out.println("You are out of memos!");
+						   buffer = "No more memos!";
 						   break;
 					   }
 				   }
-					   System.out.println("Would you like to see the next memo?");
+				       JOptionPane.showMessageDialog(null,buffer);
+				       buffer = "";
+					   System.out.println("\n\n\nWould you like to see the next memo?");
 					   System.out.println("\t1)Yes please!");
 					   System.out.println("\t2)No thats okay.");
 					   try
@@ -42,6 +59,9 @@ public class memoReader
 					   }
 					   catch(InputMismatchException e)
 					   {
+						   System.out.println("Enter either 1 or 2!");
+						   userInput.next();
+						   more = userInput.nextInt();
 					   }
 
 			   }
