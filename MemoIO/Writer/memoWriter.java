@@ -1,3 +1,11 @@
+/*
+ * Name: Russell Tan
+ * Date:
+ * Purpose:
+ * Inputs:
+ * Outputs:
+ */
+
 import java.io.*;
 import javax.swing.*;
 public class memoWriter
