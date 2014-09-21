@@ -2,7 +2,7 @@
 ================
 Here you will find different java projects that cover:
 * Inheritence
-  * [Geometry Inheritence Project](https://github.com/selnat77/OOAppDevelopment/blob/master/GeometryInheritence)
+  * [Geometry Inheritence Project](https://github.com/sellnat77/OOAppDevelopment/tree/master/GeometryInheritence)
 * Interfaces
   * [Geometry Inheritence Project](https://github.com/selnat77/OOAppDevelopment/tree/master/GeometryInheritence)
   * [Interface Lab](https://github.com/selnat77/OOAppDevelopment/tree/master/InterFaceLab)
