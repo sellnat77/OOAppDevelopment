@@ -9,6 +9,6 @@ Here you will find different java projects that cover:
 * File Input and Output
   * [Memo Input Output Project](https://github.com/sellnat77/OOAppDevelopment/tree/master/MemoIO)
 * Data Structures
-  * [Lottery Ticket Project](https://github.com/sellnat77/OOAppDevelopment/tree/master/MegamillionsArrayList)
+  * [Lottery Ticket Project](https://github.com/sellnat77/OOAppDevelopment/tree/master/MegaMillionsArrayList)
 * Stacks
 * Threads
