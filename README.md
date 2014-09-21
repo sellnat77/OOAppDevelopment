@@ -1,14 +1,14 @@
 # Object Oriented Application Development
 ================
 Here you will find different java projects that cover:
-<br>* Inheritence
-<br>* [Geometry Inheritence Project](https://github.com/selnat77/ooappdevelopment/geometryinheritence)
-<br>* Interfaces
-<br>* [Geometry Inheritence Project](https://github.com/selnat77/ooappdevelopment/geometryinheritence)
-<br>* [Interface Lab](https://github.com/selnat77/ooappdevelopment/Interfacelab)
-<br>* File Input and Output
-<br>* [Memo Input Output Project](https://github.com/selnat77/ooappdevelopment/memoio)
-<br>* Data Structures
-<br>* [Lottery Ticket Project](https://github.com/selnat77/ooappdevelopment/megamillionsarraylist)
-<br>* Stacks
-<br>* Threads
+* Inheritence
+* [Geometry Inheritence Project](https://github.com/selnat77/ooappdevelopment/geometryinheritence)
+* Interfaces
+* [Geometry Inheritence Project](https://github.com/selnat77/ooappdevelopment/geometryinheritence)
+* [Interface Lab](https://github.com/selnat77/ooappdevelopment/Interfacelab)
+* File Input and Output
+* [Memo Input Output Project](https://github.com/selnat77/ooappdevelopment/memoio)
+* Data Structures
+* [Lottery Ticket Project](https://github.com/selnat77/ooappdevelopment/megamillionsarraylist)
+* Stacks
+* Threads
