@@ -16,7 +16,7 @@ public class memoReader
 
 	void readFromFile()
 	{
-		int k;
+		int k,y;
 		String buffer = "";
 		int more = 1;
 
@@ -31,53 +31,44 @@ public class memoReader
 
 			    while(more == 1)
 			    {
-			 	    for(k = 0; k < 3; k++)
-			    	{
-			 		    if(in.hasNextLine())
-			 		    {
-			 			    switch(k)
-			 			    {
-			 			        case 0: buffer += "\nSUBJECT:    " + in.nextLine();
-			 			    	        break;
+					y = JOptionPane.showConfirmDialog(null,"Would you like to see the next memo?");
+					if(y == JOptionPane.YES_OPTION)
+					{
+						for(k = 0; k < 3; k++)
+						{
+							if(in.hasNextLine())
+							{
+								switch(k)
+								{
+									case 0: buffer += "\nSUBJECT:    " + in.nextLine();
+											break;
 
-						    	case 1: buffer += "\nDate Written:    " + in.nextLine();
-						    			break;
+									case 1: buffer += "\nDate Written:    " + in.nextLine();
+											break;
 
-						    	case 2: buffer += "\nMEMO:    " + in.nextLine();
-						    			break;
+									case 2: buffer += "\nMEMO:    " + in.nextLine();
+											break;
 
-						    	default:break;
-						    }
-					    }
-					    else
-					    {
-						    JOptionPane.showMessageDialog(null,"No more memos!");
-						    more = 2;
-						    break;
-					    }
-				    }
-				    if(more == 1)
-				    {
-					    JOptionPane.showMessageDialog(null,buffer);
+									default:break;
+								}
+							}
+
+							else
+							{
+								buffer = "No more memos!";
+								more = 2;
+								break;
+							}
+
+						}
+						JOptionPane.showMessageDialog(null,buffer);
 				        buffer = "";
-					    System.out.println("\n\n\nWould you like to see the next memo?");
-					    System.out.println("\t1)Yes please!");
-					    System.out.println("\t2)No thats okay.");
-					    try
-					    {
-						    more = userInput.nextInt();
-					    }
-					    catch(InputMismatchException e)
-					    {
-						    System.out.println("Enter either 1 or 2!");
-						    userInput.next();
-						    more = userInput.nextInt();
-					    }
 				    }
 				    else
-				    {
-				 	    break;
-				    }
+					{
+					    more = 2;
+						break;
+					}
 			   }
 			}
 		}
