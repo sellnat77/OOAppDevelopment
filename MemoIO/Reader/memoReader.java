@@ -52,29 +52,23 @@ public class memoReader
 									default:break;
 								}
 							}
+
 							else
 							{
-								JOptionPane.showMessageDialog(null,"No more memos!");
+								buffer = "No more memos!";
 								more = 2;
 								break;
 							}
-						}
 
+						}
+						JOptionPane.showMessageDialog(null,buffer);
+				        buffer = "";
 				    }
 				    else
 					{
 					    more = 2;
 						break;
 					}
-				    if(more == 1)
-				    {
-					    JOptionPane.showMessageDialog(null,buffer);
-				        buffer = "";
-				    }
-				    else
-				    {
-				 	    break;
-				    }
 			   }
 			}
 		}
