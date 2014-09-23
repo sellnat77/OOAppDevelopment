@@ -1,3 +1,11 @@
+/*
+ * Name   : Russell Tan
+ * Date   : September 23, 2014
+ * Purpose: Interface for mini word processor
+ * Inputs :
+ * Outputs:
+ */
+
 import java.util.Stack;
 
 public interface MiniWPI {

@@ -1,3 +1,11 @@
+/*
+ * Name   : Russell Tan
+ * Date   : September 23, 2014
+ * Purpose: Utilize miniwpi interface to create a mini word processor
+ * Inputs :
+ * Outputs:
+ */
+
 public class miniWord implements MiniWPI
 {
 
