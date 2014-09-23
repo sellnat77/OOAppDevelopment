@@ -98,4 +98,10 @@ public class memoReader
 			error.printStackTrace();
 		}
 	}
+
+	//Allow user to read multiple memos
+	void readMultiple()
+	{
+
+	}
 }
