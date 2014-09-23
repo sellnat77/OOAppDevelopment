@@ -49,26 +49,17 @@ public class memoWriter
 	//Allows user to specify how many memos they wish to write
 	void writeMultipleMemos()
 	{
-		int k,numberOfMemos;
+		int k,writeAnother;
 
 		//If the user enters something other than a number, they are prompted to enter a number until they successfully do so
 		while(true)
 		{
-			//Break out of loop if user enters a number
-			try
+			this.writeToFile();
+			writeAnother = JOptionPane.showConfirmDialog(null,"Would you like to write another memo?");
+			if(writeAnother != JOptionPane.YES_OPTION)
 			{
-				numberOfMemos = Integer.parseInt(JOptionPane.showInputDialog("How many memos do you want to write?"));
 				break;
 			}
-			catch(NumberFormatException error)
-			{
-				JOptionPane.showMessageDialog(null,"ENTER A NUMBER");
-			}
-		}
-
-		for(k = 0; k < numberOfMemos; k++)
-		{
-			this.writeToFile();
 		}
 	}
 }
