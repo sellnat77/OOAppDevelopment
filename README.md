@@ -11,4 +11,5 @@ Here you will find different java projects that cover:
 * Data Structures
   * [Lottery Ticket Project](https://github.com/sellnat77/OOAppDevelopment/tree/master/MegaMillionsArrayList)
 * Stacks
+  * [Mini Word Processor Project](https://github.com/sellnat77/OOAppDevelopment/tree/master/MiniWord)
 * Threads
