@@ -39,7 +39,6 @@ public class memoWriter
 
 			write.close();
 		}
-
 		catch(IOException oops)
 		{
 			System.out.println("Error writng to file.");
