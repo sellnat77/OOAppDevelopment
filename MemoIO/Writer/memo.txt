@@ -25,6 +25,3 @@ text
 school
 Thu Sep 25 11:30:11 PDT 2014
 late work
-null
-Thu Sep 25 11:33:03 PDT 2014
-null
