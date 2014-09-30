@@ -32,6 +32,7 @@ public class miniWord implements MiniWPI
 	  /** Insert c into the string at the cursor. */
 	  public void insertChar(char c)
 	  {
+		  left.push(c);
 	  }
 	  /** Move cursor left 1 character.  If we're already at the
 	   * start of the string, do nothing.
@@ -106,8 +107,20 @@ public class miniWord implements MiniWPI
 	   */
 	  public String toStringCursor()
 	  {
+		  String temp = "";
 
-		  return "true";
+		  while(!left.empty())
+		  {
+			  temp += left.pop();
+		  }
+		  temp = this.reverseString(temp);
+		  temp += '|';
+		  while(!right.empty())
+		  {
+			  temp += right.pop();
+		  }
+
+		  return temp;
 	  }
 	  /** Search forward for the next occurrence of c that starts at the
 	   * cursor or later.  If found, leave the cursor immediately after
@@ -145,5 +158,18 @@ public class miniWord implements MiniWPI
 	  /* Method to print out a command and the results */
 	  public void printtest(String s)
 	  {
+	  }
+
+	  public String reverseString(String data)
+	  {
+		  int i = data.length();
+		  String temp = "";
+
+		  for (i = data.length()-1; i > 0; i--)
+		  {
+			  temp += data.charAt(i);
+		  }
+
+		  return temp;
 	  }
 }

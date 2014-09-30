@@ -93,8 +93,4 @@ public interface MiniWPI {
   /* Method to print out a command and the results */
 
   public void printtest(String s);
-
-
-
-
 }

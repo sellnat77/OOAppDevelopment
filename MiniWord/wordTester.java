@@ -8,7 +8,25 @@
 
 public class wordTester
 {
-	public static void main(Sting Theory[])
+	public static void main(String Theory[])
 	{
+		miniWord word = new miniWord();
+
+		word.insertChar('r');
+		word.insertChar('u');
+		word.insertChar('s');
+
+		word.insertChar('s');
+		word.insertChar('e');
+		word.insertChar('l');
+
+
+		word.insertChar('l');
+		word.insertChar('!');
+		//word.moveRight();
+		word.insertChar('p');
+		word.insertChar('p');
+	System.out.println(word.toString());
+
 	}
 }
