@@ -23,10 +23,15 @@ public class wordTester
 
 		word.insertChar('l');
 		word.insertChar('!');
-		//word.moveRight();
+		word.moveRight();
 		word.insertChar('p');
 		word.insertChar('p');
-	System.out.println(word.toString());
+		word.moveLeft();
+		word.moveLeft();
+		word.moveLeft();
+		word.moveLeft();
+		word.moveLeft();
+	System.out.println(word.toStringCursor());
 
 	}
 }

@@ -112,8 +112,10 @@ public class miniWord implements MiniWPI
 		  while(!left.empty())
 		  {
 			  temp += left.pop();
+			  System.out.println(temp);
 		  }
 		  temp = this.reverseString(temp);
+		  System.out.println(temp);
 		  temp += '|';
 		  while(!right.empty())
 		  {
@@ -165,9 +167,9 @@ public class miniWord implements MiniWPI
 		  int i = data.length();
 		  String temp = "";
 
-		  for (i = data.length()-1; i > 0; i--)
+		  for (i = data.length(); i > 0; i--)
 		  {
-			  temp += data.charAt(i);
+			  temp += data.charAt(i-1);
 		  }
 
 		  return temp;
