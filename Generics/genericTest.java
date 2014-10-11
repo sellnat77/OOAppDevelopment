@@ -10,9 +10,6 @@ public class genericTest
 		ArrayList<Character> cValues = new ArrayList<Character>();
 		Measurable result = new Measurable();
 
-		//ArrayList<String> intValues = new ArrayList<Integer>();
-		//Measurable<String> intResult = new Measurable<Integer>();
-
 
 		iValues.add(9);
 		iValues.add(20);
