@@ -5,7 +5,6 @@
  * Inputs : int, string, double, character arraylists
  * Output : The entire array list and the largest value of each
  */
-
 import java.util.*;
 
 public class genericTest
@@ -20,7 +19,6 @@ public class genericTest
 
 		//Instantiate the generic class
 		Measurable measure = new Measurable();
-
 
 		//Integer array list
 		iValues.add(9);
@@ -46,6 +44,7 @@ public class genericTest
 		cValues.add('r');
 		cValues.add('g');
 
+		//Print out each array list
 		System.out.println("Integer array list is...\n");
 		measure.print(iValues);
 		System.out.println("\nString array list is...\n");
@@ -54,10 +53,11 @@ public class genericTest
 		measure.print(dValues);
 		System.out.println("\nCharacter array list is...\n");
 		measure.print(cValues);
+
+		//Display the masx values of each array list
 		System.out.println("\n\nINT    MAX : " + measure.max(iValues));
 		System.out.println("STRING MAX :" + measure.max(sValues));
 		System.out.println("DOUBLE MAX :" + measure.max(dValues));
 		System.out.println("CHAR   MAX : " + measure.max(cValues));
-
 	}
 }

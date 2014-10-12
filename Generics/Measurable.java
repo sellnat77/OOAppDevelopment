@@ -1,28 +1,15 @@
+/*
+ * Name   : Russell Tan
+ * Date   : October 11, 2014
+ * Purpose: Make the measurable interface into a generic class
+ * Inputs : n/a
+ * Output : The array list and the largest member of the array list
+ */
 import java.util.*;
 
-/**
-   Describes any class whose objects can be measured.
-*/
 public class Measurable <T>
 {
 	private T t;
-	private ArrayList<T> items = new ArrayList<T>();
-
-	public void add(T t)
-	{
-		items.add(t);
-	}
-
-	public T get(int loc)
-	{
-		return items.get(loc);
-	}
-
-
-   /**
-      Computes the measure of the object.
-      @return the measure
-   */
 
    public static <T extends Comparable<T>> T max(ArrayList<T> objects)
    {
@@ -41,7 +28,7 @@ public class Measurable <T>
    public void print( ArrayList<T> input)
    {
 	   for ( T element : input ){
-	               System.out.printf( "%s ", element );
+	               System.out.printf( "\t%s ", element );
 	            }
          System.out.println();
    }
