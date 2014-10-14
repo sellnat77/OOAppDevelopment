@@ -27,10 +27,11 @@ public class Measurable <T>
 
    public void print( ArrayList<T> input)
    {
-	   for ( T element : input ){
-	               System.out.printf( "\t%s ", element );
-	            }
-         System.out.println();
+	   for ( T element : input )
+	   {
+	   		System.out.printf( "\t%s ", element );
+	   }
+       System.out.println();
    }
 
 }
