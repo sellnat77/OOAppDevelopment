@@ -16,9 +16,10 @@ public class genericTest
 		ArrayList<String> sValues = new ArrayList<String>();
 		ArrayList<Double> dValues = new ArrayList<Double>();
 		ArrayList<Character> cValues = new ArrayList<Character>();
+		ArrayList<Person> people = new ArrayList<Person>();
 
 		//Instantiate the generic class
-		Measurable measure = new Measurable();
+		//Measurable measure = new Measurable();
 
 		//Integer array list
 		iValues.add(9);
@@ -46,18 +47,20 @@ public class genericTest
 
 		//Print out each array list
 		System.out.println("Integer array list is...\n");
-		measure.print(iValues);
+		//measure.print(iValues);
 		System.out.println("\nString array list is...\n");
-		measure.print(sValues);
+		//measure.print(sValues);
 		System.out.println("\nDouble array list is...\n");
-		measure.print(dValues);
+		//measure.print(dValues);
 		System.out.println("\nCharacter array list is...\n");
-		measure.print(cValues);
+		//measure.print(cValues);
 
 		//Display the masx values of each array list
-		System.out.println("\n\nINT    MAX : " + measure.max(iValues));
-		System.out.println("STRING MAX :" + measure.max(sValues));
-		System.out.println("DOUBLE MAX :" + measure.max(dValues));
-		System.out.println("CHAR   MAX : " + measure.max(cValues));
+		//System.out.println("\n\nINT    MAX : " + measure.max(iValues));
+		//System.out.println("STRING MAX :" + measure.max(sValues));
+		//System.out.println("DOUBLE MAX :" + measure.max(dValues));
+		//System.out.println("CHAR   MAX : " + measure.max(cValues));
+
+		people.max(people);
 	}
 }

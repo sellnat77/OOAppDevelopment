@@ -7,17 +7,19 @@
  */
 import java.util.*;
 
-public class Measurable <T>
+public abstract class Measurable <T>
 {
 	private T t;
 
-   public static <T extends Comparable<T>> T max(ArrayList<T> objects)
+	abstract int getMeasure();
+
+   public static <T extends Measurable<T>> T max(ArrayList<T> objects)
    {
       T biggest = objects.get(0);
       for (int i = 1; i <objects.size(); i++)
       {
          T obj = objects.get(i);
-         if (obj.compareTo(biggest) > 0)
+         if (obj.getMeasure()-biggest.getMeasure()>0)//(obj.compareTo(biggest) > 0)
          {
             biggest = obj;
          }
