@@ -18,6 +18,19 @@ public class genericTest
 		ArrayList<Character> cValues = new ArrayList<Character>();
 		ArrayList<Person> people = new ArrayList<Person>();
 
+		Person test1 = new Person(13,"Stan");
+		Person test2 = new Person(12,"Russell");
+		Person test3 = new Person(74,"Jack");
+		Person test4 = new Person(2,"Bailey");
+
+
+
+		people.add(test1);
+		people.add(test2);
+		people.add(test3);
+		people.add(test4);
+		Person test = new Person();
+
 		//Instantiate the generic class
 		//Measurable measure = new Measurable();
 
@@ -61,6 +74,6 @@ public class genericTest
 		//System.out.println("DOUBLE MAX :" + measure.max(dValues));
 		//System.out.println("CHAR   MAX : " + measure.max(cValues));
 
-		people.max(people);
+		System.out.println(test.max(people).getName());
 	}
 }
