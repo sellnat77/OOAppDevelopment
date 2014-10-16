@@ -11,9 +11,14 @@ public class genericTest
 {
 	public static void main(String theory[])
 	{
+		//Used for modified for loop
 		int k = 0;
+		//Instantiate the array list of person objects
 		ArrayList<Person> people = new ArrayList<Person>();
+		//Instantiate my person object to use the static max method with
 		Person test = new Person();
+
+		//Instantiate all of the people to add to the array list
 		Person test1 = new Person(13,"Stan");
 		Person test2 = new Person(12,"Russell");
 		Person test3 = new Person(74,"Jack");
@@ -23,6 +28,7 @@ public class genericTest
 		Person test7 = new Person(98,"Julia");
 		Person test8 = new Person(56,"Francis");
 
+		//Add the people to the array list
 		people.add(test1);
 		people.add(test2);
 		people.add(test3);
@@ -32,6 +38,7 @@ public class genericTest
 		people.add(test7);
 		people.add(test8);
 
+		//Prints the necessary output to demonstrate the correct usage of extending measurable class
 		System.out.println("The people added to the array list are as follows:\n");
 
 		for ( Person element : people )

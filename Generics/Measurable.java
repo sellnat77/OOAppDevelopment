@@ -9,31 +9,28 @@ import java.util.*;
 
 public abstract class Measurable <T>
 {
+
 	private T t;
 
+	//Abstract method to use later on in the person class
 	abstract int getMeasure();
 
-   public static <T extends Measurable<T>> T max(ArrayList<T> objects)
-   {
-      T biggest = objects.get(0);
-      for (int i = 1; i <objects.size(); i++)
-      {
-         T obj = objects.get(i);
-         if (obj.getMeasure()-biggest.getMeasure()>0)//(obj.compareTo(biggest) > 0)
-         {
-            biggest = obj;
-         }
-      }
-      return biggest;
-   }
-
-   public void print( ArrayList<T> input)
-   {
-	   for ( T element : input )
-	   {
-	   		System.out.printf( "\t%s \n", element );
-	   }
-       System.out.println();
-   }
-
+	//Static method to return the largest object of generic type T
+   	public static <T extends Measurable<T>> T max(ArrayList<T> objects)
+   	{
+		//Largest element is achieved through a swap and compare algorithm
+   	   	T biggest = objects.get(0);
+   	   	for (int i = 1; i <objects.size(); i++)
+   	   	{
+   	   	   T obj = objects.get(i);
+   	   	   //If the current obj is larger than the original largest obj
+   	   	   //condition will be false and the original largest obj will
+   	   	   //be swapped with the current obj
+   	   	   if (obj.getMeasure()-biggest.getMeasure()>0)
+   	   	   {
+   	   	      biggest = obj;
+   	   	   }
+   	   	}
+   	   	return biggest;
+   	}
 }
