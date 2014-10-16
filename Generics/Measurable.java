@@ -31,7 +31,7 @@ public abstract class Measurable <T>
    {
 	   for ( T element : input )
 	   {
-	   		System.out.printf( "\t%s ", element );
+	   		System.out.printf( "\t%s \n", element );
 	   }
        System.out.println();
    }
