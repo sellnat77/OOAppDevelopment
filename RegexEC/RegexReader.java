@@ -65,10 +65,7 @@ public class RegexReader
 		{
 			e.printStackTrace();
 		}
-		finally
-		{
-			scrab.close();
-		}
+
 	}
 
 
@@ -131,5 +128,25 @@ public class RegexReader
 		{
 			return null;
 		}
+	}
+
+	public int getInput()
+	{
+		Scanner userIn = new Scanner(System.in);
+		int input = 0;
+
+		while(!userIn.hasNextInt())
+		{
+			System.out.println("1)ZZ ");
+			System.out.println("2)xx ");
+			System.out.println("3)vowels ");
+			System.out.println("4)big vowels ");
+			System.out.println("5)q no u ");
+			System.out.println("What would you like to do?");
+			userIn.next();
+			input = userIn.nextInt();
+		}
+		return input;
+
 	}
 }
