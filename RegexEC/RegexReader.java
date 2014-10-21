@@ -19,6 +19,7 @@ public class RegexReader
 	{
 		int choice;
 
+
 		try
 		{
 			JFileChooser fileC = new JFileChooser();
