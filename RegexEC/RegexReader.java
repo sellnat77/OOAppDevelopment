@@ -15,7 +15,7 @@ public class RegexReader
 
 	RegexReader(){}
 
-	public void readScrabble()
+	public void readScrabbleZZ(int choice)
 	{
 
 		try
@@ -32,7 +32,27 @@ public class RegexReader
 					text = input.nextLine();
 					if(this.checkZ(text)!= null)
 					{
-						System.out.printf("%15s\t",this.checkZ(text));
+						switch(choice)
+						{
+							case 1:
+								System.out.printf("%15s\t",this.checkZ(text));
+								break;
+							case 2:
+								System.out.printf("%15s\t",this.checkX(text));
+								break;
+							case 3:
+								System.out.printf("%15s\t",this.checkVow(text));
+								break;
+							case 4:
+								System.out.printf("%15s\t",this.checkBigVow(text));
+								break;
+							case 5:
+								System.out.printf("%15s\t",this.checkQNoU(text));
+								break;
+							default:
+							break;
+						}
+
 					}
 				}
 				System.out.println("");
@@ -46,10 +66,11 @@ public class RegexReader
 			e.printStackTrace();
 		}
 		finally
-
 		{
+			scrab.close();
 		}
 	}
+
 
 	public String checkZ(String text)
 	{
