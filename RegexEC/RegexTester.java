@@ -4,8 +4,7 @@ public class RegexTester
 	{
 		RegexReader read = new RegexReader();
 
-		read.readScrabbleZZ(read.getInput());
-
+		read.readMult();
 
 	}
 }

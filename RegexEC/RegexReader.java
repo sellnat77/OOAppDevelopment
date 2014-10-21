@@ -15,8 +15,9 @@ public class RegexReader
 
 	RegexReader(){}
 
-	public void readScrabbleZZ(int choice)
+	public void readScrabble()
 	{
+		int choice;
 
 		try
 		{
@@ -26,6 +27,7 @@ public class RegexReader
 
 				File scrab = fileC.getSelectedFile();
 				Scanner input = new Scanner(scrab);
+				choice =this.getInput();
 
 				while(input.hasNext())
 				{
@@ -134,19 +136,44 @@ public class RegexReader
 	{
 		Scanner userIn = new Scanner(System.in);
 		int input = 0;
+		System.out.println("1)ZZ ");
+		System.out.println("2)xx ");
+		System.out.println("3)vowels ");
+		System.out.println("4)big vowels ");
+		System.out.println("5)q no u ");
+		System.out.println("What would you like to do?");
 
-		while(!userIn.hasNextInt())
+		try
 		{
-			System.out.println("1)ZZ ");
-			System.out.println("2)xx ");
-			System.out.println("3)vowels ");
-			System.out.println("4)big vowels ");
-			System.out.println("5)q no u ");
-			System.out.println("What would you like to do?");
-			userIn.next();
 			input = userIn.nextInt();
 		}
+		catch(InputMismatchException e)
+		{
+			userIn.next();
+			this.getInput();
+		}
+
 		return input;
 
+	}
+
+	public void readMult()
+	{
+		boolean again = false;
+
+		while(!again)
+		{
+			this.readScrabble();
+			System.out.println("Would you like to read another?");
+			System.out.println("1)yes\n2)no");
+			if(userInput.nextInt() == 1)
+			{
+				again = true;
+			}
+			else
+			{
+				again = false;
+			}
+		}
 	}
 }
