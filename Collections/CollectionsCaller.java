@@ -6,5 +6,7 @@ public class CollectionsCaller
 
 		coll.readScabble();
 
+		coll.largeSets();
+
 	}
 }
