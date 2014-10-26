@@ -1,3 +1,11 @@
+/*
+ * Name: Russell Tan
+ * Date: October 26, 2014
+ * Purpose: Determine pont values of scrabble words and analyze time difference between
+ *          Tree and hash set assignments
+ * Inputs: QNoU.txt points.txt
+ * Outputs: Point values of words and time taken by a large tree and hash set assignment
+ */
 import java.util.*;
 import java.io.*;
 
@@ -37,10 +45,10 @@ public class CollectionsMaps
 
 				for(int k = 0; k < text.length(); k++)
 				{
-					System.out.println(text.charAt(k) + "'s value is " + scrabble.get(text.charAt(k)));
+					System.out.printf("%s = %2d points\n",text.charAt(k),scrabble.get(text.charAt(k)));
 					total+= scrabble.get(text.charAt(k));
 				}
-				System.out.println("Total: " + total + "\n\n\n\n");
+				System.out.println("\nWord: " +text+ " Total: " + total + "\n\n");
 
 			}
 
