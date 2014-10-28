@@ -28,7 +28,6 @@ public class CollectionsMaps
 	{
 		try
 		{
-
 			File scrab = new File("QNoU.txt");
 			File points = new File("points.txt");
 			Scanner input = new Scanner(scrab);
@@ -75,7 +74,6 @@ public class CollectionsMaps
 	{
 		Date today = new Date();
 		long time1, time2;
-
 		try
 		{
 			File war = new File("warpeace.txt");
