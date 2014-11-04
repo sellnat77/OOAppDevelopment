@@ -1,50 +1,57 @@
 public class bubbleSorter
 {
-	int arToSort[] = new int[50];
+	private int arToSort[] = new int[20];
 
-	bubbleSorter(){}
+	public bubbleSorter(){}
 
 	public void populateArray()
 	{
-		int k;
-
-		for(k = 0; k < arToSort.length; k++)
+		for(int k = 0; k < arToSort.length; k++)
 		{
 			arToSort[k] = (int)( Math.random()*1000 % 1000);
-			
 		}
 	}
 
 	public void bSort()
 	{
-		int k,temp;
-		boolean sorted = false;
-		while(!sorted)
-		{
-			sorted = false;
-			for(k = arToSort.length-1; k > 0; k--)
+		int temp;
+		boolean swap = false;
+		for(int j = arToSort.length; j > 0; j--)
+		{	swap = false;
+			for(int k = arToSort.length-1; k > 0; k--)
 			{
-				if(arToSort[k]> arToSort[k-1])
+				if(arToSort[k] < arToSort[k-1])
 				{
-					temp = arToSort[k];
-					arToSort[k] = arToSort[k-1];
+					temp          = arToSort[k];
+					arToSort[k]   = arToSort[k-1];
 					arToSort[k-1] = temp;
-					sorted = true;
-				}	
-			}		
-		}		
-	}
 
+					swap          = true;
+				}
+			}
+			if(!swap)
+			{
+				break;
+			}
+			System.out.println("\n\nAfter run "+(1+(arToSort.length-j)));
+			this.print();
+		}
+	}
 	public void print()
 	{
 		int k;
 		for(k = 0; k <arToSort.length; k++)
 		{
-			System.out.format(arToSort[k]+",");
+			if(k == arToSort.length-1)
+			{
+				System.out.format(arToSort[k]+"");
+			}
+			else
+			{
+				System.out.format(arToSort[k]+",");
+			}
 		}
 		System.out.println("");
 	}
-
-
 }
 
