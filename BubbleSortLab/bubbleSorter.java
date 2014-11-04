@@ -8,9 +8,10 @@ public class bubbleSorter
 	{
 		int k;
 
-		for(k = 0; k < arToSort.length(); k++)
+		for(k = 0; k < arToSort.length; k++)
 		{
-			arToSort[k] = Math.rand()*1000 % 1000;
+			arToSort[k] = (int)( Math.random()*1000 % 1000);
+			
 		}
 	}
 
@@ -21,7 +22,7 @@ public class bubbleSorter
 		while(!sorted)
 		{
 			sorted = false;
-			for(k = arToSort.length(); k > 0; k--)
+			for(k = arToSort.length-1; k > 0; k--)
 			{
 				if(arToSort[k]> arToSort[k-1])
 				{
@@ -32,6 +33,16 @@ public class bubbleSorter
 				}	
 			}		
 		}		
+	}
+
+	public void print()
+	{
+		int k;
+		for(k = 0; k <arToSort.length; k++)
+		{
+			System.out.format(arToSort[k]+",");
+		}
+		System.out.println("");
 	}
 
 
