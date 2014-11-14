@@ -6,8 +6,11 @@
  * Outputs:
  */
 
+ import java.util.*;
+
 public class miniWord implements MiniWPI
 {
+	Queue<String> commands = new LinkedList<String>();
 
 	  /** Is cursor at the start of the text? */
 	  public boolean isAtStart()
@@ -155,11 +158,86 @@ public class miniWord implements MiniWPI
 	 */
 	  public void processCommand(String s)
 	  {
+		  commands.add(s);
+		  /*
+		  int k;
+		  char letter='l';
+		  for(k = 0; k < s.length(); k++)
+		  {
+			  if(s.charAt(k) == '[')
+			  {
+				  letter = s.charAt(k+1);
+				  break;
+			  }
+		  }
+
+		  switch(s.toLowerCase())
+		  {
+			  case "insert char":
+
+
+			  this.insertChar(letter);
+			  break;
+			  case "move left":
+			  this.moveLeft();
+			  break;
+			  case "move right":
+			  this.moveRight();
+			  break;
+			  case "backspace":
+			  this.backspace();
+			  break;
+			  case "delete":
+			  this.delete();
+			  break;
+			  case "move to start":
+			  this.moveToStart();
+			  break;
+			  case "move to end":
+			  this.moveToEnd();
+			  break;
+			  default:
+			  break;
+		  }
+		  */
 
 	  }
 	  /* Method to print out a command and the results */
 	  public void printtest(String s)
 	  {
+		  switch(s.toLowerCase())
+		  {
+			  case "insert char":
+			  this.insertChar(letter);
+			  System.out.println(this.toStringCursor());
+			  break;
+			  case "move left":
+			  this.moveLeft();
+			  System.out.println(this.toStringCursor());
+			  break;
+			  case "move right":
+			  this.moveRight();
+			  System.out.println(this.toStringCursor());
+			  break;
+			  case "backspace":
+			  this.backspace();
+			  System.out.println(this.toStringCursor());
+			  break;
+			  case "delete":
+			  this.delete();
+			  System.out.println(this.toStringCursor());
+			  break;
+			  case "move to start":
+			  this.moveToStart();
+			  System.out.println(this.toStringCursor());
+			  break;
+			  case "move to end":
+			  this.moveToEnd();
+			  System.out.println(this.toStringCursor());
+			  break;
+			  default:
+			  break;
+			}
 	  }
 
 	  public String reverseString(String data)
@@ -174,4 +252,62 @@ public class miniWord implements MiniWPI
 
 		  return temp;
 	  }
+
+	  public void execute()
+	  {
+		  int k;
+		  char letter='l';
+		  String s = "l";
+
+		  while(!commands.isEmpty())
+		  {
+			s=commands.remove();
+
+			  for(k = 0; k < s.length(); k++)
+			  {
+				  if(s.charAt(k) == '[')
+				  {
+					  letter = s.charAt(k+1);
+					  break;
+				  }
+			  }
+
+			  switch(s.toLowerCase())
+			  {
+				  case "insert char":
+				  this.insertChar(letter);
+				  System.out.println(this.toStringCursor());
+				  break;
+				  case "move left":
+				  this.moveLeft();
+				  System.out.println(this.toStringCursor());
+				  break;
+				  case "move right":
+				  this.moveRight();
+				  System.out.println(this.toStringCursor());
+				  break;
+				  case "backspace":
+				  this.backspace();
+				  System.out.println(this.toStringCursor());
+				  break;
+				  case "delete":
+				  this.delete();
+				  System.out.println(this.toStringCursor());
+				  break;
+				  case "move to start":
+				  this.moveToStart();
+				  System.out.println(this.toStringCursor());
+				  break;
+				  case "move to end":
+				  this.moveToEnd();
+				  System.out.println(this.toStringCursor());
+				  break;
+				  default:
+				  break;
+			  }
+
+		  }
+
+      }
+
 }
