@@ -284,33 +284,33 @@ public class miniWord implements MiniWPI
 				  }
 			  }
 
-			  switch(s.toLowerCase())
+			  switch(s.toLowerCase().charAt(0))
 			  {
-				  case "insert char":
+				  case 'i':
 				  this.insertChar(letter);
 				  System.out.println(this.toStringCursor());
 				  break;
-				  case "move left":
+				  case 'l':
 				  this.moveLeft();
 				  System.out.println(this.toStringCursor());
 				  break;
-				  case "move right":
+				  case 'r':
 				  this.moveRight();
 				  System.out.println(this.toStringCursor());
 				  break;
-				  case "backspace":
+				  case 'b':
 				  this.backspace();
 				  System.out.println(this.toStringCursor());
 				  break;
-				  case "delete":
+				  case 'd':
 				  this.delete();
 				  System.out.println(this.toStringCursor());
 				  break;
-				  case "move to start":
+				  case 's':
 				  this.moveToStart();
 				  System.out.println(this.toStringCursor());
 				  break;
-				  case "move to end":
+				  case 'e':
 				  this.moveToEnd();
 				  System.out.println(this.toStringCursor());
 				  break;
