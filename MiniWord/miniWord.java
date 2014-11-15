@@ -205,6 +205,17 @@ public class miniWord implements MiniWPI
 	  /* Method to print out a command and the results */
 	  public void printtest(String s)
 	  {
+		  int k;
+		  char letter = 'm';
+		  for(k = 0; k < s.length(); k++)
+		  {
+			if(s.charAt(k) == '[')
+			{
+				letter = s.charAt(k+1);
+				break;
+			}
+		  }
+/*
 		  switch(s.toLowerCase())
 		  {
 			  case "insert char":
@@ -238,6 +249,7 @@ public class miniWord implements MiniWPI
 			  default:
 			  break;
 			}
+*/
 	  }
 
 	  public String reverseString(String data)
