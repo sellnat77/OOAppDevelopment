@@ -11,6 +11,7 @@
 public class miniWord implements MiniWPI
 {
 	Queue<String> commands = new LinkedList<String>();
+	ListIterator<String> walk = null;
 
 	  /** Is cursor at the start of the text? */
 	  public boolean isAtStart()
@@ -270,10 +271,11 @@ public class miniWord implements MiniWPI
 		  int k;
 		  char letter='l';
 		  String s = "l";
+		  walk = commands.listIterator(); 
 
 		  while(!commands.isEmpty())
 		  {
-			s=commands.remove();
+			s=walk.next();
 
 			  for(k = 0; k < s.length(); k++)
 			  {
