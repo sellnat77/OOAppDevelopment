@@ -14,46 +14,50 @@ public class wordTester
 
 		word.processCommand("insert char[r]");
 
-		word.processCommand("insert char[u]");
-		word.processCommand("insert char[s]");
-		word.processCommand("insert char[s]");
-		word.processCommand("insert char[e]");
-		word.processCommand("insert char[l]");
-		word.processCommand("insert char[l]");
-		word.processCommand("insert char[l]");
-		word.processCommand("move right");
-		word.processCommand("insert char[ ]");
-		word.processCommand("insert char[t]");
-		word.processCommand("insert char[a]");
-		word.processCommand("insert char[n]");
-		word.processCommand("move left");
-		word.processCommand("move left");
-		word.processCommand("move left");
-		word.processCommand("move left");
-		word.processCommand("move left");
-		word.processCommand("insert char[q]");
+		word.processCommand("insert [u]");
+		word.processCommand("insert [s]");
+		word.processCommand("insert [s]");
+		word.processCommand("insert [e]");
+		word.processCommand("insert [l]");
+		word.processCommand("insert [l]");
+		word.processCommand("insert [ ]");
+		word.processCommand("insert [t]");
+		word.processCommand("insert [a]");
+		word.processCommand("insert [n]");
+		word.processCommand("left");
+		word.processCommand("left");
+		word.processCommand("left");
+		word.processCommand("left");
+		word.processCommand("left");
+		word.processCommand("right");
+		word.processCommand("right");
+		word.processCommand("insert [a]");
+		word.processCommand("insert [b]");
+		word.processCommand("insert [c]");
+		word.processCommand("delete");
+		word.processCommand("delete");
+		word.processCommand("backspace");
+		word.processCommand("insert [d]");
+		word.processCommand("insert [e]");
+		word.processCommand("insert [f]");
+		word.processCommand("start");
+		word.processCommand("insert [g]");
+		word.processCommand("insert [h]");
+		word.processCommand("insert [i]");
+		word.processCommand("insert [j]");
+		word.processCommand("left");
+		word.processCommand("left");
+		word.processCommand("left");
+		word.processCommand("find [j]");
+		word.processCommand("left");
+		word.processCommand("left");
+		word.processCommand("left");
+		word.processCommand("left");
+		word.processCommand("left");
+		word.processCommand("right");
+		word.processCommand("right");
+		word.processCommand("insert [q]");
 		word.execute();
-
-		word.insertChar('r');
-		word.insertChar('u');
-		word.insertChar('s');
-
-		word.insertChar('s');
-		word.insertChar('e');
-		word.insertChar('l');
-
-
-		word.insertChar('l');
-		word.insertChar('!');
-		word.moveRight();
-		word.insertChar('p');
-		word.insertChar('p');
-		word.moveLeft();
-		word.moveLeft();
-		word.moveLeft();
-		word.moveLeft();
-		word.moveLeft();
-	System.out.println(word.toStringCursor());
 
 	}
 }

@@ -10,8 +10,14 @@
 
 public class miniWord implements MiniWPI
 {
+	miniWord(){}
+	miniWord(String originalContent)
+	{
+		content = originalContent;
+	}
+	String content;
 	Queue<String> commands = new LinkedList<String>();
-	ListIterator<String> walk = null;
+	Iterator<String> walk = null;
 
 	  /** Is cursor at the start of the text? */
 	  public boolean isAtStart()
@@ -112,19 +118,27 @@ public class miniWord implements MiniWPI
 	  public String toStringCursor()
 	  {
 		  String temp = "";
+		  String tempR = "";
+		  Iterator<Character> nav = null;
+		  nav = left.iterator();
 
-		  while(!left.empty())
+		  while(nav.hasNext())
 		  {
-			  temp += left.pop();
-			  System.out.println(temp);
+			  temp += nav.next();
+			  //System.out.println(temp);
 		  }
-		  temp = this.reverseString(temp);
-		  System.out.println(temp);
+		  //temp = this.reverseString(temp);
+		  //System.out.println(temp);
 		  temp += '|';
-		  while(!right.empty())
+
+		  nav = right.iterator();
+		  while(nav.hasNext())
 		  {
-			  temp += right.pop();
+			  tempR += nav.next();
 		  }
+		  tempR = this.reverseString(tempR);
+
+		  temp+=tempR;
 
 		  return temp;
 	  }
@@ -142,6 +156,7 @@ public class miniWord implements MiniWPI
 			  {
 				  left.push(right.pop());
 				  found = true;
+				  break;
 			  }
 			  else
 			  {
@@ -160,48 +175,6 @@ public class miniWord implements MiniWPI
 	  public void processCommand(String s)
 	  {
 		  commands.add(s);
-		  /*
-		  int k;
-		  char letter='l';
-		  for(k = 0; k < s.length(); k++)
-		  {
-			  if(s.charAt(k) == '[')
-			  {
-				  letter = s.charAt(k+1);
-				  break;
-			  }
-		  }
-
-		  switch(s.toLowerCase())
-		  {
-			  case "insert char":
-
-
-			  this.insertChar(letter);
-			  break;
-			  case "move left":
-			  this.moveLeft();
-			  break;
-			  case "move right":
-			  this.moveRight();
-			  break;
-			  case "backspace":
-			  this.backspace();
-			  break;
-			  case "delete":
-			  this.delete();
-			  break;
-			  case "move to start":
-			  this.moveToStart();
-			  break;
-			  case "move to end":
-			  this.moveToEnd();
-			  break;
-			  default:
-			  break;
-		  }
-		  */
-
 	  }
 	  /* Method to print out a command and the results */
 	  public void printtest(String s)
@@ -216,41 +189,6 @@ public class miniWord implements MiniWPI
 				break;
 			}
 		  }
-/*
-		  switch(s.toLowerCase())
-		  {
-			  case "insert char":
-			  this.insertChar(letter);
-			  System.out.println(this.toStringCursor());
-			  break;
-			  case "move left":
-			  this.moveLeft();
-			  System.out.println(this.toStringCursor());
-			  break;
-			  case "move right":
-			  this.moveRight();
-			  System.out.println(this.toStringCursor());
-			  break;
-			  case "backspace":
-			  this.backspace();
-			  System.out.println(this.toStringCursor());
-			  break;
-			  case "delete":
-			  this.delete();
-			  System.out.println(this.toStringCursor());
-			  break;
-			  case "move to start":
-			  this.moveToStart();
-			  System.out.println(this.toStringCursor());
-			  break;
-			  case "move to end":
-			  this.moveToEnd();
-			  System.out.println(this.toStringCursor());
-			  break;
-			  default:
-			  break;
-			}
-*/
 	  }
 
 	  public String reverseString(String data)
@@ -268,12 +206,13 @@ public class miniWord implements MiniWPI
 
 	  public void execute()
 	  {
-		  int k;
-		  char letter='l';
-		  String s = "l";
-		  walk = commands.listIterator(); 
+		  int k,n;
+		  char letter='x';
+		  char command = 'x';
+		  String s = "x";
+		  walk = commands.iterator();
 
-		  while(!commands.isEmpty())
+		  while(walk.hasNext())
 		  {
 			s=walk.next();
 
@@ -285,8 +224,9 @@ public class miniWord implements MiniWPI
 					  break;
 				  }
 			  }
-
-			  switch(s.toLowerCase().charAt(0))
+			  System.out.print("\nCommand: " + s + "\t\t");
+			  command = s.toLowerCase().charAt(0);
+			  switch(command)
 			  {
 				  case 'i':
 				  this.insertChar(letter);
@@ -309,11 +249,17 @@ public class miniWord implements MiniWPI
 				  System.out.println(this.toStringCursor());
 				  break;
 				  case 's':
+				  System.out.println("HIT START\n\n");
 				  this.moveToStart();
 				  System.out.println(this.toStringCursor());
 				  break;
 				  case 'e':
 				  this.moveToEnd();
+				  System.out.println(this.toStringCursor());
+				  break;
+				  case 'f':
+				  System.out.println("HIT SEARCH\n\n");
+				  this.search(letter);
 				  System.out.println(this.toStringCursor());
 				  break;
 				  default:
