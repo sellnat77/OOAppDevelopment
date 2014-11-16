@@ -10,10 +10,40 @@ public class wordTester
 {
 	public static void main(String Theory[])
 	{
-		miniWord word = new miniWord();
+		miniWord word = new miniWord("HOCUSPOCUS");
 
-		word.processCommand("insert char[r]");
+		word.processCommand("insert [a]");
+		word.processCommand("insert [b]");
+		word.processCommand("insert [c]");
+		word.processCommand("insert [d]");
+		word.processCommand("insert [e]");
+		word.processCommand("insert [f]");
+		word.processCommand("insert [g]");
+		word.processCommand("insert [h]");
+		word.processCommand("insert [i]");
+		word.processCommand("insert [j]");
 
+
+
+		word.processCommand("insert [k]");
+		word.processCommand("insert [l]");
+		word.processCommand("insert [m]");
+		word.processCommand("insert [n]");
+		word.processCommand("insert [o]");
+		word.processCommand("insert [p]");
+		word.processCommand("insert [q]");
+		word.processCommand("insert [r]");
+		word.processCommand("left");
+		word.processCommand("left");
+		word.processCommand("left");
+		word.processCommand("find [r]");
+		word.processCommand("left");
+		word.processCommand("left");
+		word.processCommand("left");
+		word.processCommand("left");
+		word.processCommand("left");
+
+		word.processCommand("insert [r]");
 		word.processCommand("insert [u]");
 		word.processCommand("insert [s]");
 		word.processCommand("insert [s]");
@@ -24,39 +54,21 @@ public class wordTester
 		word.processCommand("insert [t]");
 		word.processCommand("insert [a]");
 		word.processCommand("insert [n]");
-		word.processCommand("left");
-		word.processCommand("left");
-		word.processCommand("left");
-		word.processCommand("left");
-		word.processCommand("left");
-		word.processCommand("right");
-		word.processCommand("right");
-		word.processCommand("insert [a]");
-		word.processCommand("insert [b]");
-		word.processCommand("insert [c]");
-		word.processCommand("delete");
-		word.processCommand("delete");
+
+		word.processCommand("insert [s]");
+		word.processCommand("insert [t]");
+		word.processCommand("insert [u]");
+		word.processCommand("insert [v]");
 		word.processCommand("backspace");
-		word.processCommand("insert [d]");
-		word.processCommand("insert [e]");
-		word.processCommand("insert [f]");
+		word.processCommand("backspace");
 		word.processCommand("start");
-		word.processCommand("insert [g]");
-		word.processCommand("insert [h]");
-		word.processCommand("insert [i]");
-		word.processCommand("insert [j]");
-		word.processCommand("left");
-		word.processCommand("left");
-		word.processCommand("left");
-		word.processCommand("find [j]");
-		word.processCommand("left");
-		word.processCommand("left");
-		word.processCommand("left");
-		word.processCommand("left");
-		word.processCommand("left");
-		word.processCommand("right");
-		word.processCommand("right");
-		word.processCommand("insert [q]");
+		word.processCommand("find [t]");
+		word.processCommand("delete");
+		word.processCommand("delete");
+		word.processCommand("insert [w]");
+		word.processCommand("insert [x]");
+		word.processCommand("insert [y]");
+		word.processCommand("insert [z]");
 		word.execute();
 
 	}

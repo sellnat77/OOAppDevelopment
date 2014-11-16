@@ -13,7 +13,12 @@ public class miniWord implements MiniWPI
 	miniWord(){}
 	miniWord(String originalContent)
 	{
-		content = originalContent;
+		for(int k = 0; k < originalContent.length(); k++)
+		{
+			this.insertChar(originalContent.charAt(k));
+		}
+		System.out.printf("Start  : \t\t\t%s\n\n",originalContent);
+		this.toStringCursor();
 	}
 	String content;
 	Queue<String> commands = new LinkedList<String>();
@@ -77,10 +82,18 @@ public class miniWord implements MiniWPI
 	   * do nothing. */
 	  public void delete()
 	  {
-		  if(right.peek() != null)
+		  try
 		  {
-			  right.pop();
+			  if(right.peek() != null)
+			  {
+				  right.pop();
+			  }
 		  }
+		  catch(EmptyStackException e)
+		  {
+			  System.out.println("There arent any more elements for you to delete!");
+		  }
+
 	  }
 	  /** Move cursor to start of the text. */
 	  public void moveToStart()
@@ -125,10 +138,7 @@ public class miniWord implements MiniWPI
 		  while(nav.hasNext())
 		  {
 			  temp += nav.next();
-			  //System.out.println(temp);
 		  }
-		  //temp = this.reverseString(temp);
-		  //System.out.println(temp);
 		  temp += '|';
 
 		  nav = right.iterator();
@@ -224,7 +234,7 @@ public class miniWord implements MiniWPI
 					  break;
 				  }
 			  }
-			  System.out.print("\nCommand: " + s + "\t\t");
+			  System.out.printf("\nCommand: %10s\t\t",s);
 			  command = s.toLowerCase().charAt(0);
 			  switch(command)
 			  {
@@ -249,7 +259,6 @@ public class miniWord implements MiniWPI
 				  System.out.println(this.toStringCursor());
 				  break;
 				  case 's':
-				  System.out.println("HIT START\n\n");
 				  this.moveToStart();
 				  System.out.println(this.toStringCursor());
 				  break;
@@ -258,7 +267,6 @@ public class miniWord implements MiniWPI
 				  System.out.println(this.toStringCursor());
 				  break;
 				  case 'f':
-				  System.out.println("HIT SEARCH\n\n");
 				  this.search(letter);
 				  System.out.println(this.toStringCursor());
 				  break;
