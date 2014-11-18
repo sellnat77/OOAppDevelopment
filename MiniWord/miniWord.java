@@ -1,9 +1,9 @@
 /*
  * Name   : Russell Tan
- * Date   : September 23, 2014
+ * Date   : November 17, 2014
  * Purpose: Utilize miniwpi interface to create a mini word processor
- * Inputs :
- * Outputs:
+ * Inputs : Standard commands in word processing
+ * Outputs: The corresponding output when performing commands
  */
 
  import java.util.*;

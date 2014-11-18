@@ -1,16 +1,16 @@
 /*
  * Name   : Russell Tan
- * Date   : September 23, 2014
- * Purpose: Testing of mini word processor
- * Inputs :
- * Outputs:
+ * Date   : November 17, 2014
+ * Purpose: Test the Mini word processor interface
+ * Inputs : Standard commands in word processing
+ * Outputs: The corresponding output when performing commands
  */
 
 public class wordTester
 {
 	public static void main(String Theory[])
 	{
-		miniWord word = new miniWord("HOCUSPOCUS");
+		miniWord word = new miniWord("Hocus Pocus");
 
 		word.processCommand("insert [a]");
 		word.processCommand("insert [b]");
@@ -23,16 +23,6 @@ public class wordTester
 		word.processCommand("insert [i]");
 		word.processCommand("insert [j]");
 
-
-
-		word.processCommand("insert [k]");
-		word.processCommand("insert [l]");
-		word.processCommand("insert [m]");
-		word.processCommand("insert [n]");
-		word.processCommand("insert [o]");
-		word.processCommand("insert [p]");
-		word.processCommand("insert [q]");
-		word.processCommand("insert [r]");
 		word.processCommand("left");
 		word.processCommand("left");
 		word.processCommand("left");
@@ -69,7 +59,7 @@ public class wordTester
 		word.processCommand("insert [x]");
 		word.processCommand("insert [y]");
 		word.processCommand("insert [z]");
+		word.processCommand("end");
 		word.execute();
-
 	}
 }

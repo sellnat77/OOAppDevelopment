@@ -1,9 +1,9 @@
 /*
  * Name   : Russell Tan
- * Date   : September 23, 2014
+ * Date   : November 17, 2014
  * Purpose: Interface for mini word processor
- * Inputs :
- * Outputs:
+ * Inputs : NA
+ * Outputs: NA
  */
 
 import java.util.Stack;
