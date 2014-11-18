@@ -10,7 +10,14 @@
 
 public class miniWord implements MiniWPI
 {
+
+	String content;
+	Queue<String> commands = new LinkedList<String>();
+	Iterator<String> walk = null;
+
 	miniWord(){}
+	//Full constructor pushes the string to the left stack
+	//by using the insertChar() method
 	miniWord(String originalContent)
 	{
 		for(int k = 0; k < originalContent.length(); k++)
@@ -20,9 +27,7 @@ public class miniWord implements MiniWPI
 		System.out.printf("Start  : \t\t\t%s\n\n",originalContent);
 		this.toStringCursor();
 	}
-	String content;
-	Queue<String> commands = new LinkedList<String>();
-	Iterator<String> walk = null;
+
 
 	  /** Is cursor at the start of the text? */
 	  public boolean isAtStart()
@@ -146,6 +151,7 @@ public class miniWord implements MiniWPI
 		  {
 			  tempR += nav.next();
 		  }
+		  //Need to reverse this portion in order to print out appropriately
 		  tempR = this.reverseString(tempR);
 
 		  temp+=tempR;
@@ -162,6 +168,7 @@ public class miniWord implements MiniWPI
 
 		  while(!isAtEnd())
 		  {
+			  //If the char is found, break from the loop to preserve cursor location
 			  if(right.peek() == c)
 			  {
 				  left.push(right.pop());
@@ -201,6 +208,8 @@ public class miniWord implements MiniWPI
 		  }
 	  }
 
+	  //Reverses the given string
+	  //Utilized to print out appropriately when popping from the stack
 	  public String reverseString(String data)
 	  {
 		  int i = data.length();
@@ -214,9 +223,12 @@ public class miniWord implements MiniWPI
 		  return temp;
 	  }
 
+
+	  //Navigates throught the queue of commands
+	  //Prints out the command and the result for each command given
 	  public void execute()
 	  {
-		  int k,n;
+		  int k;
 		  char letter='x';
 		  char command = 'x';
 		  String s = "x";
@@ -224,8 +236,10 @@ public class miniWord implements MiniWPI
 
 		  while(walk.hasNext())
 		  {
-			s=walk.next();
-
+			  s=walk.next();
+			  //Assigns letter if an '[' is found
+			  //Since commands are in the form of:
+			  //Insert char [x]
 			  for(k = 0; k < s.length(); k++)
 			  {
 				  if(s.charAt(k) == '[')
@@ -235,6 +249,7 @@ public class miniWord implements MiniWPI
 				  }
 			  }
 			  System.out.printf("\nCommand: %10s\t\t",s);
+			  //Command is determined by the first letter of the command since each is unique
 			  command = s.toLowerCase().charAt(0);
 			  switch(command)
 			  {
@@ -273,9 +288,6 @@ public class miniWord implements MiniWPI
 				  default:
 				  break;
 			  }
-
 		  }
-
       }
-
 }
