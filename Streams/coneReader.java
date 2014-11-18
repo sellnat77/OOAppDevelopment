@@ -12,11 +12,9 @@ public class coneReader
 		{
 			file = new FileInputStream("IceCreamCones.ser");
 			read = new ObjectInputStream(file);
-			ArrayList<AdvancedIceCreamCone> cones = null;
+			ArrayList<AdvancedIceCreamCone> cones = (ArrayList<AdvancedIceCreamCone>)read.readObject();
 
-			cones = new ArrayList<AdvancedIceCreamCone>();
-
-			for(AdvancedIceCreamCone ice:cones)
+			for(AdvancedIceCreamCone ice : cones)
 			{
 				System.out.println(ice.toString()+"\n\n");
 			}
@@ -25,6 +23,9 @@ public class coneReader
 
 		}
 		catch(FileNotFoundException e)
+		{
+		}
+		catch(ClassNotFoundException e)
 		{
 		}
 		catch(IOException e)

@@ -42,10 +42,9 @@ public class coneWriter
 			myCones.add(chocoCone);
 			myCones.add(strawCone);
 
-			for(AdvancedIceCreamCone ice : myCones)
-			{
-				write.writeObject(ice);
-			}
+			write.writeObject(myCones);
+
+
 			write.close();
 
 
