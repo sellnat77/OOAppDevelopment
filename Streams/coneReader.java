@@ -24,12 +24,35 @@ public class coneReader
 			file = new FileInputStream("IceCreamCones.ser");
 			read = new ObjectInputStream(file);
 			//Put the objects into an arraylist of type (Adv.icecreamcone)
-			ArrayList<AdvancedIceCreamCone> cones = (ArrayList<AdvancedIceCreamCone>)read.readObject();
+
 
 			//Prompt user for the desired flavor
 			System.out.println("Which flavor ice cream would you like?");
 			System.out.print("\n\tVanilla\n\tChocolate\n\tStrawberry\n");
 			choice = userInput.nextLine();
+
+			AdvancedIceCreamCone van = (AdvancedIceCreamCone)read.readObject();
+			AdvancedIceCreamCone choc = (AdvancedIceCreamCone) read.readObject();
+			AdvancedIceCreamCone straw = (AdvancedIceCreamCone)read.readObject();
+
+			switch(choice.toLowerCase())
+			{
+				case "vanilla":
+				System.out.println("\t\tYou chose " + choice +"!");
+				System.out.println("\n\n" + van.toString() + "\n\n");
+				break;
+				case "chocolate":
+				System.out.println("\t\tYou chose " + choice +"!");
+				System.out.println("\n\n" + choc.toString() + "\n\n");
+				break;
+				case "strawberry":
+				System.out.println("\t\tYou chose " + choice +"!");
+				System.out.println("\n\n" + straw.toString() + "\n\n");
+				break;
+			}
+
+
+/*
 
 			//Enhanced for loop to iterate through every object in the arraylist
 			for(AdvancedIceCreamCone ice : cones)
@@ -51,6 +74,7 @@ public class coneReader
 			{
 				System.out.println(ice.toString() + "\n\n");
 			}
+			*/
 
 		}
 		//Catching all checked exceptions

@@ -26,7 +26,7 @@ public class coneWriter
 			AdvancedIceCreamCone chocoCone = new AdvancedIceCreamCone();
 			AdvancedIceCreamCone strawCone = new AdvancedIceCreamCone();
 			//Create the array list of type AdvancedIceCreamCone
-			ArrayList<AdvancedIceCreamCone> myCones = new ArrayList<AdvancedIceCreamCone>();
+
 
 			//Modifying the member variables of each object
 			vanillaCone.addScoop();
@@ -49,12 +49,10 @@ public class coneWriter
 			strawCone.addToppings("Strawberries");
 			strawCone.addToppings("Gummy Bears");
 
-			myCones.add(vanillaCone);
-			myCones.add(chocoCone);
-			myCones.add(strawCone);
-
 			//Write the object stream(In an arraylist) to the .ser file
-			write.writeObject(myCones);
+			write.writeObject(vanillaCone);
+			write.writeObject(chocoCone);
+			write.writeObject(strawCone);
 			//Close the stream
 			write.close();
 		}
