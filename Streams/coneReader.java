@@ -35,6 +35,7 @@ public class coneReader
 			AdvancedIceCreamCone choc = (AdvancedIceCreamCone) read.readObject();
 			AdvancedIceCreamCone straw = (AdvancedIceCreamCone)read.readObject();
 
+			//Checking which flavor the user wants
 			switch(choice.toLowerCase())
 			{
 				case "vanilla":
@@ -50,32 +51,6 @@ public class coneReader
 				System.out.println("\n\n" + straw.toString() + "\n\n");
 				break;
 			}
-
-
-/*
-
-			//Enhanced for loop to iterate through every object in the arraylist
-			for(AdvancedIceCreamCone ice : cones)
-			{
-				//If the flavor of the object == the flavor entered by the user
-				//Print out the toString() method of that object
-				if(ice.getFlavor().toLowerCase().equals(choice.toLowerCase()))
-				{
-					System.out.println("\t\tYou chose " + choice +"!");
-					System.out.println("\n\n" + ice.toString() + "\n\n");
-				}
-			}
-			System.out.println("Enter any key to show all object in the arraylist");
-			choice = userInput.next();
-
-			//Display all the objects to show what their values are
-			System.out.println("\n\nTo show all objects read from stream:");
-			for(AdvancedIceCreamCone ice : cones)
-			{
-				System.out.println(ice.toString() + "\n\n");
-			}
-			*/
-
 		}
 		//Catching all checked exceptions
 		catch(FileNotFoundException e)

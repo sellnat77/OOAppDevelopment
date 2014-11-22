@@ -49,7 +49,7 @@ public class coneWriter
 			strawCone.addToppings("Strawberries");
 			strawCone.addToppings("Gummy Bears");
 
-			//Write the object stream(In an arraylist) to the .ser file
+			//Write the object stream as individual objects to the .ser file
 			write.writeObject(vanillaCone);
 			write.writeObject(chocoCone);
 			write.writeObject(strawCone);
