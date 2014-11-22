@@ -36,17 +36,17 @@ public class coneReader
 			AdvancedIceCreamCone straw = (AdvancedIceCreamCone)read.readObject();
 
 			//Checking which flavor the user wants
-			switch(choice.toLowerCase())
+			switch(choice.toLowerCase().charAt(0))
 			{
-				case "vanilla":
+				case 'v':
 				System.out.println("\t\tYou chose " + choice +"!");
 				System.out.println("\n\n" + van.toString() + "\n\n");
 				break;
-				case "chocolate":
+				case 'c':
 				System.out.println("\t\tYou chose " + choice +"!");
 				System.out.println("\n\n" + choc.toString() + "\n\n");
 				break;
-				case "strawberry":
+				case 's':
 				System.out.println("\t\tYou chose " + choice +"!");
 				System.out.println("\n\n" + straw.toString() + "\n\n");
 				break;
