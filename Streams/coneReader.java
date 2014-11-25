@@ -23,8 +23,6 @@ public class coneReader
 			//Declare the objectinputstream and apply it to the .ser file that has the stream
 			file = new FileInputStream("IceCreamCones.ser");
 			read = new ObjectInputStream(file);
-			//Put the objects into an arraylist of type (Adv.icecreamcone)
-
 
 			//Prompt user for the desired flavor
 			System.out.println("Which flavor ice cream would you like?");
@@ -49,6 +47,8 @@ public class coneReader
 				case "strawberry":
 				System.out.println("\t\tYou chose " + choice +"!");
 				System.out.println("\n\n" + straw.toString() + "\n\n");
+				break;
+				default:
 				break;
 			}
 		}

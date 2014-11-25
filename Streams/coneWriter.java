@@ -25,8 +25,6 @@ public class coneWriter
 			AdvancedIceCreamCone vanillaCone = new AdvancedIceCreamCone();
 			AdvancedIceCreamCone chocoCone = new AdvancedIceCreamCone();
 			AdvancedIceCreamCone strawCone = new AdvancedIceCreamCone();
-			//Create the array list of type AdvancedIceCreamCone
-
 
 			//Modifying the member variables of each object
 			vanillaCone.addScoop();
@@ -34,7 +32,6 @@ public class coneWriter
 			vanillaCone.setTypeOfCone("Waffle");
 			vanillaCone.addToppings("Butterfinger");
 			vanillaCone.addToppings("Marshmallow");
-
 			chocoCone.addScoop();
 			chocoCone.addScoop();
 			chocoCone.addScoop();
@@ -42,7 +39,6 @@ public class coneWriter
 			chocoCone.setTypeOfCone("Chocolate Dipped");
 			chocoCone.addToppings("Reeses");
 			chocoCone.addToppings("Hot Fudge");
-
 			strawCone.addScoop();
 			strawCone.setFlavor("Strawberry");
 			strawCone.addToppings("Strawberry Syrup");
