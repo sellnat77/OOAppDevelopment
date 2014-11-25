@@ -1,3 +1,4 @@
+import java.util.*;
 public class threadRunners implements Runnable
 {
 	private int speed;
@@ -5,6 +6,8 @@ public class threadRunners implements Runnable
 	private String name;
 	private int rest;
 	private int totalDistance = 1200;
+
+	threadRunners(){}
 
 	threadRunners(int A, int B, String C, String D)
 	{
@@ -72,6 +75,27 @@ public class threadRunners implements Runnable
 		}
 		catch(InterruptedException e)
 		{
+		}
+
+	}
+
+	public void prompt()
+	{
+		Scanner userInput = new Scanner(System.in);
+
+		try
+		{
+			System.out.print("What is the name of the animal? ");
+			this.setName(userInput.nextLine());
+			System.out.print("What is the speed? ");
+			this.setSpeed(userInput.nextInt());
+			userInput.next();
+			System.out.print("How long does it need to rest? ");
+			this.setRest(userInput.nextInt());
+		}
+		catch(InputMismatchException e)
+		{
+			e.printStackTrace();
 		}
 
 	}
