@@ -55,20 +55,20 @@ public class threadRunners implements Runnable
 	public void run()
 	{
 		int totalDistanceCovered = 0;
-		int lapsCompleted = 0;
+		int count = 0;
 		int oneLap = 400;
 
 		try
 		{
 			while(totalDistanceCovered < totalDistance)
 			{
-				if(totalDistanceCovered % oneLap == 0 && totalDistanceCovered != 0)
+				if(count % 4 == 0 && totalDistanceCovered != 0)
 				{
-					lapsCompleted++;
 					System.out.println(this.getName()+" has run \t" + totalDistanceCovered + "m!\n");
 				}
 				totalDistanceCovered += this.getSpeed();
 				Thread.sleep(this.getRest());
+				count++;
 
 			}
 			System.out.println("\t\t\t" + this.getName() + " has finished!");
@@ -89,7 +89,6 @@ public class threadRunners implements Runnable
 			this.setName(userInput.nextLine());
 			System.out.print("What is the speed? ");
 			this.setSpeed(userInput.nextInt());
-			userInput.next();
 			System.out.print("How long does it need to rest? ");
 			this.setRest(userInput.nextInt());
 		}
