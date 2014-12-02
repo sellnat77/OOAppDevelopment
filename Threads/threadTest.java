@@ -12,6 +12,8 @@ public class threadTest
 		threadRunners crocodile = new threadRunners();
 		threadRunners cheetah = new threadRunners();
 
+
+
 		System.out.println("How many animals are in the race?");
 		num = userInput.nextInt();
 
@@ -29,15 +31,11 @@ public class threadTest
 			t[k].start();
 		}
 
-		//Thread t1 = new Thread(cat);
-		//Thread t2 = new Thread(turtle);
-		//Thread t3 = new Thread(crocodile);
-		//Thread t4 = new Thread(cheetah);
 
-		//t1.start();
-		//t2.start();
-		//t3.start();
-		//t4.start();
+
+
+
+
 
 
 

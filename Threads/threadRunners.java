@@ -5,6 +5,8 @@ public class threadRunners implements Runnable
 	private String typeOfAnimal;
 	private String name;
 	private int rest;
+
+	private static int place = 1;
 	private int totalDistance = 1200;
 
 	threadRunners(){}
@@ -56,8 +58,6 @@ public class threadRunners implements Runnable
 	{
 		int totalDistanceCovered = 0;
 		int count = 0;
-		int oneLap = 400;
-
 		try
 		{
 			while(totalDistanceCovered < totalDistance)
@@ -71,7 +71,27 @@ public class threadRunners implements Runnable
 				count++;
 
 			}
-			System.out.println("\t\t\t" + this.getName() + " has finished!");
+			switch(place)
+			{
+				case 1:
+				System.out.println("\t\t\t" + this.getName() + " has finished " + place + "st place!");
+				break;
+				case 2:
+				System.out.println("\t\t\t" + this.getName() + " has finished " + place + "nd place!");
+				break;
+				case 3:
+				System.out.println("\t\t\t" + this.getName() + " has finished " + place + "rd place!");
+				break;
+				case 4:
+				System.out.println("\t\t\t" + this.getName() + " has finished " + place + "th place!");
+				break;
+				default:
+				System.out.println("\t\t\t" + this.getName() + " has finished " + place + "th place!");
+				break;
+			}
+			place++;
+
+
 		}
 		catch(InterruptedException e)
 		{
