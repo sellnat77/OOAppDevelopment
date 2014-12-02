@@ -1,4 +1,4 @@
-/*
+ /*
  * Name: Russell Tan
  * Date: 1 December 2014
  * Purpose: Create threads that will simulate a race and provide place finished
