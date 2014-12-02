@@ -79,16 +79,16 @@ public class threadRunners implements Runnable
 			switch(place)
 			{
 				case 1:
-				System.out.println("\t\t\t" + this.getName() + " has finished " + place + "st place!");
+				System.out.println("\t\t\t" + this.getName() + " has finished in " + place + "st place!");
 				break;
 				case 2:
-				System.out.println("\t\t\t" + this.getName() + " has finished " + place + "nd place!");
+				System.out.println("\t\t\t" + this.getName() + " has finished in " + place + "nd place!");
 				break;
 				case 3:
-				System.out.println("\t\t\t" + this.getName() + " has finished " + place + "rd place!");
+				System.out.println("\t\t\t" + this.getName() + " has finished in " + place + "rd place!");
 				break;
 				default:
-				System.out.println("\t\t\t" + this.getName() + " has finished " + place + "th place!");
+				System.out.println("\t\t\t" + this.getName() + " has finished in " + place + "th place!");
 				break;
 			}
 			//Increment the static place to keep track of who finished when
