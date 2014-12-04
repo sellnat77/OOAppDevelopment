@@ -58,9 +58,12 @@ public class threadRunners implements Runnable
 	//Run method used for threads
 	public void run()
 	{
-		//Instantiate the total distance covered and count to zero to track progress
+		//Instantiate the total distance covered and count to zero and timer to current time to track progress
 		int totalDistanceCovered = 0;
 		int count = 0;
+		//Start the timer
+		long start = System.currentTimeMillis();
+		long end = 0;
 		//Using try to catch checked exceptions
 		try
 		{
@@ -75,6 +78,9 @@ public class threadRunners implements Runnable
 				Thread.sleep(this.getRest());
 				count++;
 			}
+			//Stop the timer
+			end = System.currentTimeMillis() - start;
+			//System.out.println("It took " + this.getName() + " " + end + " milliseconds\n");
 			//Using switch to account for first, second, and third cases
 			switch(place)
 			{
@@ -91,6 +97,7 @@ public class threadRunners implements Runnable
 				System.out.println("\t\t\t" + this.getName() + " has finished in " + place + "th place!");
 				break;
 			}
+			System.out.println("\t\t\tIt took " + this.getName() + " " + end + " milliseconds\n");
 			//Increment the static place to keep track of who finished when
 			place++;
 		}
